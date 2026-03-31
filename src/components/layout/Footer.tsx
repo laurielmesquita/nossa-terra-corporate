@@ -11,14 +11,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-5 space-y-10">
-            <Link href="/" className="flex items-center gap-4 no-underline group outline-none">
-              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center overflow-hidden p-3 shadow-2xl shadow-black/20 transition-all group-hover:scale-105">
-                <img 
-                  src="/branding/logo-hd.png" 
-                  alt="Nossa Terra Imobiliária" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            <Link href="/" className="flex items-center no-underline group outline-none">
+              <img 
+                src="/assets/logos/logo-vertical-white.png" 
+                alt="Nossa Terra Imobiliária" 
+                className="h-28 w-auto object-contain transition-all group-hover:scale-105"
+              />
             </Link>
             <p className="text-white/50 text-xl font-medium leading-relaxed max-w-sm">
               Consultoria estratégica especializada em ativos rurais no Norte do Piauí e Sul do Maranhão.

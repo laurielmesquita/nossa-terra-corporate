@@ -42,15 +42,13 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-[72px]">
-            <Link href="/" className="flex items-center gap-4 no-underline group outline-none">
-              <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-lg shadow-black/5 transition-all group-hover:scale-105 p-2">
-                <img 
-                  src="/branding/logo-hd.png" 
-                  alt="Nossa Terra Imobiliária" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </Link>
+          <Link href="/" className="flex items-center no-underline group outline-none">
+            <img 
+              src={isOpaque ? "/assets/logos/logo-horizontal-color.png" : "/assets/logos/logo-horizontal-white.png"} 
+              alt="Nossa Terra Imobiliária" 
+              className="h-10 w-auto object-contain transition-all duration-300"
+            />
+          </Link>
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8">
@@ -112,13 +110,11 @@ export default function Navbar() {
       >
         <nav className="flex flex-col gap-4 p-8 pt-32 h-full">
           <div className="mb-12 border-b border-gray-100 pb-8">
-            <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center overflow-hidden p-3 shadow-md">
-              <img 
-                src="/branding/logo-hd.png" 
-                alt="Nossa Terra Logo" 
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <img 
+              src="/assets/logos/logo-horizontal-color.png" 
+              alt="Nossa Terra Logo" 
+              className="h-10 w-auto object-contain"
+            />
           </div>
           {navLinks.map((link) => (
             <Link
