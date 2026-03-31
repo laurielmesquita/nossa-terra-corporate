@@ -77,15 +77,23 @@ export default function ContatoPage() {
                       <div className="text-white/60 text-sm font-medium">Atendimento prioritário e imediato</div>
                     </div>
                   </a>
-                  <div className="p-8 rounded-[2.5rem] bg-muted/30 border border-muted/50 flex items-center gap-6 shadow-sm">
-                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-2xl shadow-inner">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=Rua+Professor+Diniz,+1199+-+Lourival+Parente,+Teresina+-+PI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-8 rounded-[2.5rem] bg-muted/30 border border-muted/50 flex items-center gap-6 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group no-underline"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform">
                       📍
                     </div>
                     <div>
                       <div className="font-extrabold text-lg text-primary font-serif leading-tight">Rua Professor Diniz, 1199</div>
                       <div className="text-muted-foreground text-xs font-medium uppercase tracking-widest mt-1">Lourival Parente, Teresina - PI</div>
+                      <div className="text-accent text-[10px] font-bold uppercase tracking-widest mt-2 flex items-center gap-2">
+                        Traçar Rota <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
 
