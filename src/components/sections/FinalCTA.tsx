@@ -24,7 +24,7 @@ export default function FinalCTA() {
               <span className="text-accent italic">blindada.</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-5xl mx-auto font-medium">
+            <p className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-4xl mx-auto font-medium">
               Una-se a quem domina a técnica e a lei no campo. Proteja seu investimento com quem entende do Norte do Piauí e Sul do Maranhão.
             </p>
 
