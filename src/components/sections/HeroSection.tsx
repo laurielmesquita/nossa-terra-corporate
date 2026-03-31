@@ -37,7 +37,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Content with Entrance Animations */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
         {/* Status Badge */}
         <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-2.5 mb-10 text-sm font-semibold tracking-wide shadow-2xl">
           <span className="relative flex h-2.5 w-2.5">
@@ -48,14 +48,14 @@ export default function HeroSection() {
         </div>
 
         {/* Cinematic Headline */}
-        <h1 className="font-serif font-extrabold text-5xl md:text-7xl lg:text-9xl leading-[1.0] tracking-tight mb-10 max-w-5xl mx-auto drop-shadow-2xl">
+        <h1 className="font-serif font-extrabold text-5xl md:text-7xl lg:text-9xl leading-[1.0] tracking-tight mb-10 max-w-7xl mx-auto drop-shadow-2xl">
           Segurança Jurídica, <br />
           <span className="text-[#17A98B] italic">Análise Técnica</span> <br />
           e Crédito Rural.
         </h1>
 
         {/* Elegant Subheadline */}
-        <p className="text-lg md:text-2xl text-white/70 max-w-3xl mx-auto mb-16 leading-relaxed font-medium">
+        <p className="text-lg md:text-2xl text-white/70 max-w-4xl mx-auto mb-16 leading-relaxed font-medium">
           A Nossa Terra não é apenas uma imobiliária rural. É a consultoria
           estratégica para quem exige absoluta proteção e inteligência no campo.
         </p>
@@ -76,7 +76,7 @@ export default function HeroSection() {
         </div>
 
         {/* Stats Strip */}
-        <div className="mt-28 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl w-full border-t border-white/10 pt-14 opacity-80">
+        <div className="mt-28 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-7xl w-full border-t border-white/10 pt-14 opacity-80">
           {[
             { value: "2021", label: "No Mercado" },
             { value: "100%", label: "Segurança" },
