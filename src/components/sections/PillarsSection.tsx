@@ -62,9 +62,9 @@ export default function PillarsSection() {
     <section className="bg-muted/20 py-32 overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-1/2 bg-white -z-10" />
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         {/* Header - Refined Prestigious Style */}
-        <div className="text-center max-w-4xl mx-auto mb-24">
+        <div className="text-center max-w-5xl mx-auto mb-24">
           <Badge className="bg-accent/10 text-accent border-accent/20 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] mb-10">
             One-Stop-Shop Rural
           </Badge>
@@ -72,7 +72,7 @@ export default function PillarsSection() {
             Do primeiro contato à{" "}
             <span className="text-accent underline decoration-accent/20 underline-offset-16 italic">escritura assinada.</span>
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto font-medium">
             Reunimos as quatro inteligências cruciais para o campo em um único ecossistema consultivo.
           </p>
         </div>

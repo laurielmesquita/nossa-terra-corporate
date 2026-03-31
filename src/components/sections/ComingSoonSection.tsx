@@ -28,10 +28,10 @@ const mockProperties = [
 export default function ComingSoonSection() {
   return (
     <section id="imoveis" className="bg-white py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         {/* Header - Refined Architecture */}
         <div className="flex flex-col lg:flex-row items-baseline lg:items-end justify-between gap-12 mb-24 border-b border-muted pb-12">
-          <div className="max-w-2xl">
+          <div className="max-w-4xl">
             <Badge variant="outline" className="text-nt-orange border-nt-orange/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] mb-8 bg-nt-orange-light">
               Portfólio em Curadoria
             </Badge>

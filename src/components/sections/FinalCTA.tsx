@@ -4,7 +4,7 @@ export default function FinalCTA() {
 
   return (
     <section className="bg-white py-40 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="bg-primary rounded-[4rem] p-16 md:p-32 text-center text-white overflow-hidden relative border border-white/5 shadow-[0_50px_100px_-20px_rgba(15,61,53,0.4)]">
           {/* Advanced Decorative Blurs */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[180px] -translate-y-1/2 translate-x-1/2" />
@@ -19,7 +19,7 @@ export default function FinalCTA() {
               Conversa inicial sem compromisso
             </div>
 
-            <h2 className="text-5xl md:text-7xl lg:text-9xl font-serif font-extrabold leading-[1] max-w-5xl mx-auto tracking-tight">
+            <h2 className="text-5xl md:text-7xl lg:text-9xl font-serif font-extrabold leading-[1] max-w-7xl mx-auto tracking-tight">
               A sua terra, <br />
               <span className="text-accent italic">blindada.</span>
             </h2>

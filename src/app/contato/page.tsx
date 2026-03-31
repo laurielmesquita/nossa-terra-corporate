@@ -36,8 +36,8 @@ export default function ContatoPage() {
     <div className="bg-white min-h-screen">
       {/* Header section */}
       <section className="pt-32 pb-16 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent block mb-6">
               Contato
             </span>
@@ -53,7 +53,7 @@ export default function ContatoPage() {
 
       {/* Main content grid */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
             {/* Contact channels & Info */}

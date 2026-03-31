@@ -28,8 +28,8 @@ export default function AudienceSection() {
     <section className="py-32 bg-gray-50 overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-teal-600/20 to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
+        <div className="text-center max-w-5xl mx-auto mb-20 space-y-6">
           <Badge variant="outline" className="border-teal-600/30 text-teal-600 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] bg-white">
             Para quem trabalhamos
           </Badge>

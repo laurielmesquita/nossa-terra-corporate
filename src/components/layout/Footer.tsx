@@ -8,7 +8,7 @@ export default function Footer() {
       {/* Subtle organic background glow */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-600/10 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2" />
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-5 space-y-10">
             <Link href="/" className="flex items-center no-underline group outline-none">

@@ -33,9 +33,9 @@ const problems = [
 export default function ProblemSection() {
   return (
     <section className="bg-white py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         {/* Header - Refined Typography */}
-        <div className="max-w-4xl mb-24">
+        <div className="max-w-5xl mb-24">
           <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-nt-orange block mb-6">
             O Cenário Atual
           </span>

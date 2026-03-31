@@ -36,7 +36,7 @@ const proofItems = [
 export default function ProofStrip() {
   return (
     <section className="bg-white border-b border-muted">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 py-6">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
           {proofItems.map((item, i) => (
             <div

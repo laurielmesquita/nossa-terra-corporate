@@ -7,8 +7,8 @@ export default function SobrePage() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
+          <div className="max-w-5xl">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent block mb-6">
               Sobre Nós
             </span>
@@ -24,7 +24,7 @@ export default function SobrePage() {
 
       {/* History Section */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/10">
               <img
@@ -60,7 +60,7 @@ export default function SobrePage() {
       {/* Aline Bio Section */}
       <section id="aline" className="py-24 bg-primary text-white overflow-hidden relative">
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-accent/10 blur-[120px] rounded-full" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1">
               <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent block mb-8">
@@ -111,11 +111,11 @@ export default function SobrePage() {
 
       {/* Values/Pillars Recap */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 text-center mb-16">
           <h2 className="text-4xl font-serif font-extrabold text-primary mb-4">Nossa entrega em cada hectare.</h2>
           <div className="w-20 h-1.5 bg-accent mx-auto rounded-full" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
             { title: "Transparência", desc: "Laudos técnicos reais. Se a terra não produz, nós avisamos.", icon: "💎" },
             { title: "Rigor Jurídico", desc: "Análise profunda de toda a cadeia dominial antes da oferta.", icon: "⚖️" },
