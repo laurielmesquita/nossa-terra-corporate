@@ -21,7 +21,7 @@ export default function Footer() {
                 className="h-28 w-auto object-contain transition-all group-hover:scale-105"
               />
             </Link>
-            <p className="text-white/50 text-xl font-medium leading-relaxed max-w-sm">
+            <p className="text-white/50 text-lg font-medium leading-relaxed max-w-md">
               Consultoria estratégica especializada em ativos rurais no Norte do Piauí e Sul do Maranhão.
             </p>
             <div className="flex gap-6">
