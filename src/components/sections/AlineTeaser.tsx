@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AlineTeaser() {
   const primaryBtnClass = "bg-[#0F3D35] hover:bg-teal-900 text-white rounded-2xl h-16 px-10 text-lg font-bold shadow-2xl shadow-[#0F3D35]/20 border-none transition-all hover:-translate-y-1 flex items-center justify-center no-underline";
@@ -19,9 +20,10 @@ export default function AlineTeaser() {
             <div className="border-none bg-white rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10 transition-transform duration-700 group-hover:scale-[1.02]">
               <div className="p-0">
                 <div className="relative h-[600px]">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
                     alt="Aline Nascimento — Nossa Terra"
+                    fill
                     className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F3D35]/60 via-transparent to-transparent opacity-80" />
