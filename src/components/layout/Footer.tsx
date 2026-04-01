@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,9 +13,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-5 space-y-10">
             <Link href="/" className="flex items-center no-underline group outline-none">
-              <img 
+              <Image 
                 src="/assets/logos/logo-vertical-white.png" 
                 alt="Nossa Terra Imobiliária" 
+                width={200}
+                height={112}
                 className="h-28 w-auto object-contain transition-all group-hover:scale-105"
               />
             </Link>
@@ -61,8 +64,13 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-white/30 text-xs font-bold uppercase tracking-widest">
-            © {currentYear} Nossa Terra Imobiliária · Todos os direitos reservados.
+          <div className="flex flex-col gap-2">
+            <div className="text-white/30 text-xs font-bold uppercase tracking-widest">
+              © {currentYear} Nossa Terra Imobiliária · Todos os direitos reservados.
+            </div>
+            <div className="text-white/20 text-[10px] font-bold uppercase tracking-widest">
+              CNPJ: 42.160.646/0001-86 · Rua Professor Diniz, 1199, Lourival Parente - Teresina/PI
+            </div>
           </div>
           <div className="flex gap-12 text-white/20 text-[10px] font-bold uppercase tracking-widest">
             <a href="#" className="hover:text-white transition-colors">Privacidade</a>
