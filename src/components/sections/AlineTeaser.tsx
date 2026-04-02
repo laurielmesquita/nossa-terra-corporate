@@ -24,7 +24,7 @@ export default function AlineTeaser() {
                     src="/images/aline-perita.png"
                     alt="Aline Nascimento — Nossa Terra"
                     fill
-                    className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                    className="w-full h-full object-cover object-top grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F3D35]/60 via-transparent to-transparent opacity-80" />
                   

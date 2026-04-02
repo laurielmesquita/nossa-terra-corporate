@@ -101,7 +101,7 @@ export default function SobrePage() {
                 <img
                   src="/images/aline-perita.png"
                   alt="Aline Nascimento"
-                  className="w-full h-[600px] object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                  className="w-full h-[600px] object-cover object-top grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                 />
               </div>
             </div>
