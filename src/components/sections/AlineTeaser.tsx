@@ -21,7 +21,7 @@ export default function AlineTeaser() {
               <div className="p-0">
                 <div className="relative h-[600px]">
                   <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
+                    src="/images/aline-perita.png"
                     alt="Aline Nascimento — Nossa Terra"
                     fill
                     className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
