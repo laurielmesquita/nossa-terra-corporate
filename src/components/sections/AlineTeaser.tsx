@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function AlineTeaser() {
-  const primaryBtnClass = "bg-[#0F3D35] hover:bg-teal-900 text-white rounded-2xl h-16 px-10 text-lg font-bold shadow-2xl shadow-[#0F3D35]/20 border-none transition-all hover:-translate-y-1 flex items-center justify-center no-underline";
-  const outlineBtnClass = "border border-gray-200 hover:bg-gray-50 text-[#0F3D35] rounded-2xl h-16 px-10 text-lg font-bold transition-all hover:-translate-y-1 flex items-center justify-center no-underline";
+  const primaryBtnClass = "bg-[#0F3D35] hover:bg-teal-900 text-white rounded-2xl h-16 px-10 text-lg font-bold shadow-2xl shadow-[#0F3D35]/20 border-none transition-all duration-700 hover:-translate-y-1 flex items-center justify-center no-underline";
+  const outlineBtnClass = "border border-gray-200 hover:bg-gray-50 text-[#0F3D35] rounded-2xl h-16 px-10 text-lg font-bold transition-all duration-700 hover:-translate-y-1 flex items-center justify-center no-underline";
 
   return (
     <section className="bg-white py-32 overflow-hidden relative" id="aline">
@@ -15,7 +15,7 @@ export default function AlineTeaser() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Image Area - High End Aesthetics */}
-          <div className="lg:col-span-5 relative group">
+          <div className="lg:col-span-5 relative group opacity-0 animate-fade-in-up stagger-1">
             <div className="absolute -inset-4 bg-teal-600/10 rounded-[3rem] blur-2xl group-hover:bg-teal-600/20 transition-all duration-700" />
             <div className="border-none bg-white rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10 transition-transform duration-700 group-hover:scale-[1.02]">
               <div className="p-0">
@@ -46,7 +46,7 @@ export default function AlineTeaser() {
 
           {/* Text Area - Refined Copy & Typography */}
           <div className="lg:col-span-7 space-y-10">
-            <div>
+            <div className="opacity-0 animate-fade-in-up stagger-2">
               <Badge variant="outline" className="text-teal-600 border-teal-600/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] mb-8 bg-teal-600/5">
                 Autoridade em Campo
               </Badge>
@@ -56,7 +56,7 @@ export default function AlineTeaser() {
               <div className="w-24 h-1.5 bg-teal-600 rounded-full mb-10" />
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-8 opacity-0 animate-fade-in-up stagger-3">
               <p className="text-xl text-gray-500 leading-relaxed font-medium max-w-2xl">
                 Aline Nascimento traz o rigor técnico que transações complexas de campo exigem. Com profundo domínio técnico e pericial, ela garante que cada hectare negociado tenha segurança total.
               </p>
@@ -69,7 +69,7 @@ export default function AlineTeaser() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 pt-6">
+            <div className="flex flex-col sm:flex-row gap-6 pt-6 opacity-0 animate-fade-in-up stagger-4">
               <Link href="/sobre" className={primaryBtnClass}>
                 Conhecer Trajetória →
               </Link>

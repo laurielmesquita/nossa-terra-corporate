@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export default function SobrePage() {
   const whatsappBtnClass = "bg-accent hover:bg-teal-mid text-white rounded-2xl h-14 px-10 font-bold shadow-2xl shadow-accent/40 border-none transition-all hover:scale-105 flex items-center justify-center no-underline";
@@ -26,11 +27,12 @@ export default function SobrePage() {
       <section className="py-24">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/10">
-              <img
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/10 h-[500px]">
+              <Image
                 src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80"
                 alt="Campo Nossa Terra"
-                className="w-full h-[500px] object-cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
             </div>
@@ -97,11 +99,12 @@ export default function SobrePage() {
             </div>
             <div className="order-1 lg:order-2 relative group">
               <div className="absolute -inset-4 bg-accent/20 rounded-[3rem] blur-2xl group-hover:bg-accent/30 transition-all duration-700" />
-              <div className="border-none bg-white rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
-                <img
+              <div className="border-none bg-white rounded-[3rem] overflow-hidden shadow-2xl relative z-10 h-[600px]">
+                <Image
                   src="/images/aline-perita.png"
                   alt="Aline Nascimento"
-                  className="w-full h-[600px] object-cover object-top grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                  fill
+                  className="object-cover object-top grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                 />
               </div>
             </div>

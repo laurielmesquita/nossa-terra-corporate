@@ -24,9 +24,26 @@ export default function ContatoPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
+    
+    // Simulate background processing
+    await new Promise((r) => setTimeout(r, 800));
+    
+    // Generate formatted WhatsApp message
+    const profileLabel = profileOptions.find(o => o.value === form.profile)?.label || form.profile;
+    const message = `Olá Aline! Acabo de ver o site da Nossa Terra e gostaria de iniciar uma consultoria.
+
+*Nome:* ${form.name}
+*Perfil:* ${profileLabel}
+*E-mail:* ${form.email || 'Não informado'}
+*Mensagem:* ${form.message}`;
+    
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=5586999279390&text=${encodeURIComponent(message)}`;
+    
     setLoading(false);
     setSent(true);
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
   };
 
   const backHomeBtnClass = "bg-accent hover:bg-teal-mid text-white rounded-2xl h-14 px-10 font-bold shadow-lg shadow-accent/30 flex items-center justify-center no-underline transition-all active:scale-95";

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Início" },
@@ -22,8 +23,10 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }, [pathname, isOpen]);
 
   const isOpaque = !isHeroPage || scrolled || isOpen;
 
@@ -43,11 +46,15 @@ export default function Navbar() {
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="flex items-center no-underline group outline-none">
-            <img 
-              src={isOpaque ? "/assets/logos/logo-horizontal-color.png" : "/assets/logos/logo-horizontal-white.png"} 
-              alt="Nossa Terra Imobiliária" 
-              className="h-10 w-auto object-contain transition-all duration-300"
-            />
+            <div className="relative h-10 w-48">
+              <Image 
+                src={isOpaque ? "/assets/logos/logo-horizontal-color.png" : "/assets/logos/logo-horizontal-white.png"} 
+                alt="Nossa Terra Imobiliária" 
+                fill
+                priority
+                className="object-contain transition-all duration-300"
+              />
+            </div>
           </Link>
 
             {/* Desktop nav */}
@@ -110,11 +117,14 @@ export default function Navbar() {
       >
         <nav className="flex flex-col gap-4 p-8 pt-32 h-full">
           <div className="mb-12 border-b border-gray-100 pb-8">
-            <img 
-              src="/assets/logos/logo-horizontal-color.png" 
-              alt="Nossa Terra Logo" 
-              className="h-10 w-auto object-contain"
-            />
+            <div className="relative h-10 w-48">
+              <Image 
+                src="/assets/logos/logo-horizontal-color.png" 
+                alt="Nossa Terra Logo" 
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
           {navLinks.map((link) => (
             <Link

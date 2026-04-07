@@ -10,37 +10,37 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: {
-    default: "Nossa Terra Imobiliária — Consultoria Completa em Imóveis Rurais",
+    default: "Nossa Terra Imobiliária — Consultoria e Inteligência Documental Rural",
     template: "%s | Nossa Terra Imobiliária",
   },
   description:
-    "A Nossa Terra reúne intermediação imobiliária, segurança jurídica especializada, análise técnica de solo e crédito rural em um único atendimento. Norte do Piauí e Sul do Maranhão.",
+    "Intermediação imobiliária com absoluta segurança jurídica. Liderada por Aline Nascimento, a Nossa Terra oferece inteligência documental, perícia judicial e crédito rural no Piauí e Maranhão.",
   keywords: [
     "imóveis rurais",
-    "fazendas à venda",
-    "imobiliária rural piauí",
+    "fazendas à venda piauí",
+    "fazendas à venda maranhão",
     "direito agrário",
+    "perícia judicial rural",
     "crédito rural",
     "investimento em terras",
-    "Norte Piauí",
-    "Sul Maranhão",
-    "consultoria rural",
+    "nossaterra.imb.br",
+    "Aline Nascimento",
   ],
   authors: [{ name: "Nossa Terra Imobiliária" }],
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://nossaterra.realty",
+    url: "https://nossaterra.imb.br",
     siteName: "Nossa Terra Imobiliária",
-    title: "Nossa Terra — Consultoria Completa em Imóveis Rurais",
+    title: "Nossa Terra — Inteligência Documental e Consultoria Rural",
     description:
-      "Terra, segurança jurídica, análise técnica e crédito rural — em um só lugar. Norte do Piauí e Sul do Maranhão.",
+      "Segurança jurídica, análise técnica e crédito rural em um só lugar. Proteja seu patrimônio no campo com quem domina a técnica e a lei.",
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f3d35",
+  themeColor: "#0F3D35",
 };
 
 import { Analytics } from "@vercel/analytics/next";
