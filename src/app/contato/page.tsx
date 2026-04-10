@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 const profileOptions = [
   { value: "comprador", label: "🌾 Comprador / Investidor" },
@@ -51,18 +52,28 @@ export default function ContatoPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Header section */}
-      <section className="pt-32 pb-16 bg-muted/20 overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
+      {/* Compact Hero Section */}
+      <section className="relative pt-40 pb-16 bg-primary group overflow-hidden">
+        {/* Relevant Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1454165833767-1330084bc6f9?w=1600&auto=format&fit=crop&q=80"
+            alt="Atendimento Consultivo"
+            fill
+            priority
+            className="object-cover opacity-20 group-hover:scale-105 transition-transform duration-[3000ms]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+        </div>
+
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent block mb-6 opacity-0 animate-fade-in-up">
-              Contato
-            </span>
-            <h1 className="text-5xl md:text-6xl font-serif font-extrabold text-primary leading-[1.1] tracking-tight mb-8 opacity-0 animate-fade-in-up stagger-1">
-              Vamos conversar sobre o seu <span className="text-teal-mid italic">próximo passo no campo?</span>
+            <Breadcrumb items={[{ label: "Contato" }]} />
+            <h1 className="text-4xl md:text-5xl font-serif font-extrabold text-white leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-in-up stagger-1">
+              Vamos conversar sobre o seu <span className="text-accent italic">próximo passo no campo?</span>
             </h1>
-            <p className="text-xl text-muted-foreground font-medium leading-relaxed opacity-0 animate-fade-in-up stagger-2">
-              O atendimento na Nossa Terra é pessoal e consultivo. Aline Nascimento conduzirá sua jornada pessoalmente.
+            <p className="text-lg text-white/70 font-medium leading-relaxed max-w-2xl opacity-0 animate-fade-in-up stagger-2">
+              O atendimento na Nossa Terra é pessoal e consultivo. Unimos segurança técnica e agilidade para o seu negócio.
             </p>
           </div>
         </div>

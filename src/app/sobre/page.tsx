@@ -1,23 +1,34 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export default function SobrePage() {
   const whatsappBtnClass = "bg-accent hover:bg-teal-mid text-white rounded-2xl h-14 px-10 font-bold shadow-2xl shadow-accent/40 border-none transition-all hover:scale-105 flex items-center justify-center no-underline";
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-muted/20 overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent block mb-6 opacity-0 animate-fade-in-up">
-              Sobre Nós
-            </span>
-            <h1 className="text-5xl md:text-6xl font-extrabold text-primary leading-[1.1] tracking-tight mb-8 font-serif opacity-0 animate-fade-in-up stagger-1">
-              Mais do que uma imobiliária. Uma <span className="text-teal-mid italic">consultoria estratégica</span> do seu negócio no campo.
+      {/* Compact Hero Section */}
+      <section className="relative pt-40 pb-20 bg-primary group overflow-hidden">
+        {/* Relevant Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&auto=format&fit=crop&q=80"
+            alt="Vastidão Rural"
+            fill
+            priority
+            className="object-cover opacity-30 group-hover:scale-105 transition-transform duration-[3000ms]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+        </div>
+
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl">
+            <Breadcrumb items={[{ label: "Sobre" }]} />
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-6 font-serif opacity-0 animate-fade-in-up stagger-1">
+              Mais do que uma imobiliária. Uma <span className="text-accent italic">consultoria técnica</span>.
             </h1>
-            <p className="text-xl text-muted-foreground font-medium leading-relaxed opacity-0 animate-fade-in-up stagger-2">
-              Fundada para resolver a falta de segurança técnica e jurídica no mercado rural do Piauí e Maranhão.
+            <p className="text-lg text-white/70 font-medium leading-relaxed max-w-2xl opacity-0 animate-fade-in-up stagger-2">
+              Segurança técnica e jurídica para o mercado rural do Piauí e Maranhão, guiada pela autoridade da Aline Nascimento.
             </p>
           </div>
         </div>
