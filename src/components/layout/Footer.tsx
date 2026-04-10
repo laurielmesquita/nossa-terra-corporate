@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="md:col-span-5 space-y-10">
             <Link href="/" className="flex items-center no-underline group outline-none">
               <Image 
-                src="/assets/logos/logo-vertical-white.png" 
+                src="/assets/logos/nossaterra-logo-vertical-white.png" 
                 alt="Nossa Terra Imobiliária" 
                 width={200}
                 height={112}

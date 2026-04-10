@@ -48,7 +48,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center no-underline group outline-none">
             <div className="relative h-10 w-48">
               <Image 
-                src={isOpaque ? "/assets/logos/logo-horizontal-color.png" : "/assets/logos/logo-horizontal-white.png"} 
+                src={isOpaque ? "/assets/logos/nossaterra-logo-horizontal-color.png" : "/assets/logos/nossaterra-logo-horizontal-white.png"} 
                 alt="Nossa Terra Imobiliária" 
                 fill
                 priority
@@ -119,7 +119,7 @@ export default function Navbar() {
           <div className="mb-12 border-b border-gray-100 pb-8">
             <div className="relative h-10 w-48">
               <Image 
-                src="/assets/logos/logo-horizontal-color.png" 
+                src="/assets/logos/nossaterra-logo-horizontal-color.png" 
                 alt="Nossa Terra Logo" 
                 fill
                 className="object-contain"
