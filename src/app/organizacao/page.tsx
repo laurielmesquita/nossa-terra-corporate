@@ -56,7 +56,7 @@ export default function OrganizacaoPage() {
             </h1>
             
             <p className="text-white/60 text-xl font-light max-w-lg leading-relaxed mb-12">
-              Estrutura corporativa completa, fluxos de trabalho e governança de dados para a excelência operacional da Nossa Terra.
+              Estrutura corporativa completa, fluxos de trabalho e governança de dados para a excelência operacional.
             </p>
 
             <div className="flex gap-4">
