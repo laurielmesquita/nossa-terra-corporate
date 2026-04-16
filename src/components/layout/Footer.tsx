@@ -38,7 +38,6 @@ export default function Footer() {
                 { label: "Início", href: "/" },
                 { label: "Sobre", href: "/sobre" },
                 { label: "Contato", href: "/contato" },
-                { label: "Apresentação", href: "/apresentacao" },
               ].map((link) => (
                 <Link key={link.label} href={link.href} className="text-white/70 hover:text-white transition-colors text-lg font-medium no-underline">
                   {link.label}
