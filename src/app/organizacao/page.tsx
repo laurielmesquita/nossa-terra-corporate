@@ -51,10 +51,8 @@ export default function OrganizacaoPage() {
               <span className="w-8 h-[1px] bg-accent" /> Administração & Gestão
             </div>
             
-            <h1 className="text-white font-serif text-5xl md:text-8xl font-black leading-[1.05] mb-10 tracking-tighter">
-              Organização <br />
-              <span className="text-accent italic">Inteligente</span> <br />
-              do Repositório
+            <h1 className="text-white font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] mb-10 tracking-tighter max-w-4xl">
+              Organização <span className="text-accent italic">Inteligente</span> do Repositório
             </h1>
             
             <p className="text-white/60 text-xl font-light max-w-lg leading-relaxed mb-12">
