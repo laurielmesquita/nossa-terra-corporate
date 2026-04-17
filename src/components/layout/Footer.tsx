@@ -36,6 +36,7 @@ export default function Footer() {
             <nav className="flex flex-col gap-6">
               {[
                 { label: "Início", href: "/" },
+                { label: "Imóveis", href: "/imoveis" },
                 { label: "Sobre", href: "/sobre" },
                 { label: "Contato", href: "/contato" },
               ].map((link) => (
