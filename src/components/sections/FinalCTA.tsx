@@ -3,7 +3,7 @@ export default function FinalCTA() {
   const ghostBtnClass = "text-white/70 hover:text-white hover:bg-white/5 rounded-2xl h-20 px-12 text-xl font-bold transition-all underline decoration-white/20 underline-offset-8 flex items-center justify-center no-underline duration-700 hover:scale-105";
 
   return (
-    <section className="bg-white py-40 overflow-hidden relative">
+    <section className="bg-white pt-0 pb-32 overflow-hidden relative">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="bg-teal-950 rounded-[4rem] p-16 md:p-32 text-center text-white overflow-hidden relative border border-white/5 shadow-[0_50px_100px_-20px_rgba(15,61,53,0.4)]">
           {/* Advanced Decorative Blurs */}
