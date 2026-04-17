@@ -46,7 +46,7 @@ export default function HeroCarousel() {
         </div>
       ),
       bg: featuredProperty.mainImage,
-      video: featuredProperty.videoUrl
+      video: "https://cdn.coverr.co/videos/coverr-horses-on-a-misty-farm-5500/1080p.mp4"
     },
     {
       id: "brand",
@@ -101,7 +101,7 @@ export default function HeroCarousel() {
           </div>
         ),
         bg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80",
-        video: "https://cdn.coverr.co/videos/coverr-horses-on-a-misty-farm-5500/1080p.mp4"
+        video: null
       }
   ];
 
