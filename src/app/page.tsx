@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import HeroSection from "@/components/sections/HeroSection";
+import HeroCarousel from "@/components/sections/HeroCarousel";
 import ProofStrip from "@/components/sections/ProofStrip";
 import ProblemSection from "@/components/sections/ProblemSection";
 import PillarsSection from "@/components/sections/PillarsSection";
 import AudienceSection from "@/components/sections/AudienceSection";
 import AlineTeaser from "@/components/sections/AlineTeaser";
-import ComingSoonSection from "@/components/sections/ComingSoonSection";
+import FeaturedCatalog from "@/components/sections/FeaturedCatalog";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
+      <HeroCarousel />
       <ProofStrip />
       <ProblemSection />
       <PillarsSection />
       <AudienceSection />
       <AlineTeaser />
-      <ComingSoonSection />
+      <FeaturedCatalog />
       <FinalCTA />
     </>
   );

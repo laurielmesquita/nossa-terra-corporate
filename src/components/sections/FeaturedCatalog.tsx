@@ -2,90 +2,87 @@
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import Image from "next/image";
+import { properties } from "@/data/properties";
+import { Maximize2, MapPin, ArrowRight } from "lucide-react";
 
-const mockProperties = [
-  {
-    tag: "Norte do Piauí",
-    area: "1.200 ha",
-    type: "Pecuária + Lavoura",
-    desc: "Propriedade estratégica com ótima logística e documentação em análise jurídica.",
-    img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
-  },
-  {
-    tag: "Sul do Maranhão",
-    area: "850 ha",
-    type: "Lavoura de Soja",
-    desc: "Solo de alta fertilidade com pluviometria histórica analisada técnica e cientificamente.",
-    img: "https://images.unsplash.com/photo-1574943320219-553eb213f72d",
-  },
-  {
-    tag: "Região Serrana - PI",
-    area: "2.400 ha",
-    type: "Pecuária Extensiva",
-    desc: "Grande potencial hídrico e estrutura de manejo já instalada e produtiva.",
-    img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399",
-  },
-];
+export default function FeaturedCatalog() {
+  // Only show featured properties on home
+  const featured = properties.filter(p => p.featured).slice(0, 3);
 
-export default function ComingSoonSection() {
   return (
     <section id="imoveis" className="bg-white py-32">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         {/* Header - Refined Architecture */}
         <div className="flex flex-col lg:flex-row items-baseline lg:items-end justify-between gap-12 mb-24 border-b border-muted pb-12">
           <div className="max-w-4xl">
-            <Badge variant="outline" className="text-nt-orange border-nt-orange/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] mb-8 bg-nt-orange-light">
-              Portfólio em Curadoria
+            <Badge variant="outline" className="text-nt-orange border-nt-orange/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] mb-8 bg-nt-orange-light/10">
+              Oportunidades Selecionadas
             </Badge>
             <h2 className="text-4xl md:text-6xl font-serif font-extrabold text-primary leading-tight">
-              Propriedades <span className="text-teal-mid italic">Seleccionadas.</span>
+              Investimento em <span className="text-teal-600 italic">Terras Produtivas.</span>
             </h2>
           </div>
           <div className="flex flex-col items-start lg:items-end">
-            <div className="flex items-center gap-3 text-sm font-bold text-nt-orange mb-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-nt-orange animate-ping" />
-              Catálogo completo em breve
-            </div>
-            <p className="text-muted-foreground text-sm font-medium">Lançamento oficial em Abril de 2026</p>
+            <Link 
+              href="/imoveis" 
+              className="group flex items-center gap-3 text-sm font-bold text-teal-600 hover:text-primary transition-colors no-underline uppercase tracking-widest"
+            >
+              Ver Catálogo Completo
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </Link>
+            <p className="text-muted-foreground text-sm font-medium mt-2">Atualizado em Abril de 2026</p>
           </div>
         </div>
 
         {/* Property cards - High Fidelity Aesthetics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
-          {mockProperties.map((prop, i) => (
-            <div
-              key={i}
-              className="group rounded-[2.5rem] overflow-hidden border-none bg-muted/20 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(15,61,53,0.12)] transition-all duration-700"
+          {featured.map((prop) => (
+            <Link
+              key={prop.id}
+              href={`/imoveis/${prop.id}`}
+              className="group rounded-[2.5rem] overflow-hidden border-none bg-muted/20 hover:bg-white hover:shadow-[0_40px_80px_-15px_rgba(15,61,53,0.12)] transition-all duration-700 no-underline"
             >
               <div className="relative h-72 overflow-hidden">
                 <Image
-                  src={`${prop.img}?w=800&auto=format&fit=crop&q=75`}
-                  alt={prop.type}
+                  src={prop.mainImage}
+                  alt={prop.title}
                   fill
                   className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-60" />
+                
+                {prop.opportunity && (
+                  <Badge className="absolute top-6 right-6 bg-nt-orange text-white px-4 py-1.5 rounded-xl font-bold uppercase text-[9px] tracking-widest leading-none shadow-xl border-none">
+                    Oportunidade
+                  </Badge>
+                )}
+                
                 <Badge className="absolute top-6 left-6 bg-white/20 backdrop-blur-xl border border-white/30 text-white px-4 py-1.5 rounded-xl font-bold uppercase text-[9px] tracking-widest leading-none">
-                  {prop.tag}
+                  {prop.location}
                 </Badge>
               </div>
               
               <div className="p-10">
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-3xl font-serif font-extrabold text-primary">{prop.area}</span>
+                  <span className="text-3xl font-serif font-extrabold text-primary tracking-tighter">{prop.area}</span>
                   <Badge className="bg-secondary text-primary font-bold px-4 py-1.5 rounded-lg border border-primary/10 shadow-sm">
                     {prop.type}
                   </Badge>
                 </div>
-                <p className="text-base text-muted-foreground leading-relaxed mb-8 h-18 overflow-hidden font-medium">
-                  {prop.desc}
+                
+                <h4 className="text-xl font-serif font-black text-primary mb-4 group-hover:text-teal-600 transition-colors">
+                  {prop.title}
+                </h4>
+
+                <p className="text-base text-muted-foreground leading-relaxed mb-8 h-12 line-clamp-2 font-medium">
+                  {prop.description}
                 </p>
                 <div className="h-px w-full mb-8 bg-muted/40" />
-                <div className="w-full h-14 rounded-2xl text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40 border border-muted group-hover:border-primary/10 bg-muted/10 flex items-center justify-center cursor-not-allowed">
-                  Indisponível para Visitação
+                <div className="w-full h-14 rounded-2xl text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 border border-teal-600/20 group-hover:border-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-all flex items-center justify-center">
+                  Ver Análise Completa
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -99,10 +96,10 @@ export default function ComingSoonSection() {
               Acesso Exclusivo
             </Badge>
             <h3 className="text-4xl md:text-5xl font-serif font-extrabold text-white mb-6 leading-tight">
-              Oportunidades que não chegam ao <span className="text-accent italic">mercado aberto.</span>
+              Oportunidades em regime de <span className="text-accent italic">off-market.</span>
             </h3>
             <p className="text-white/60 text-xl font-medium leading-relaxed">
-              Assine nossa curadoria estratégica e seja notificado sobre propriedades em regime de confidencialidade.
+              Assine nossa curadoria estratégica e seja notificado sobre propriedades em regime de confidencialidade antes de chegarem ao mercado.
             </p>
           </div>
           
