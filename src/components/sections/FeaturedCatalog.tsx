@@ -10,7 +10,7 @@ export default function FeaturedCatalog() {
   const featured = properties.filter(p => p.featured).slice(0, 3);
 
   return (
-    <section id="imoveis" className="bg-white pt-0 pb-16">
+    <section id="imoveis" className="bg-white pt-24 pb-16">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         {/* Header - Refined Architecture */}
         <div className="flex flex-col lg:flex-row items-baseline lg:items-end justify-between gap-12 mb-24 border-b border-muted pb-12">
