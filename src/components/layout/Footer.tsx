@@ -33,7 +33,7 @@ export default function Footer() {
 
           <div className="md:col-span-3 space-y-8">
             <h4 className="text-teal-400 font-bold uppercase tracking-[0.3em] text-[10px]">Links Rápidos</h4>
-            <nav className="flex flex-col gap-6">
+            <nav className="flex flex-col gap-3">
               {[
                 { label: "Início", href: "/" },
                 { label: "Imóveis", href: "/imoveis" },
