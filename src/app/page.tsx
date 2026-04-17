@@ -6,6 +6,7 @@ import PillarsSection from "@/components/sections/PillarsSection";
 import AudienceSection from "@/components/sections/AudienceSection";
 import AlineTeaser from "@/components/sections/AlineTeaser";
 import FeaturedCatalog from "@/components/sections/FeaturedCatalog";
+import NewsletterSection from "@/components/sections/NewsletterSection";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
@@ -19,10 +20,11 @@ export default function HomePage() {
     <>
       <HeroCarousel />
       <ProofStrip />
-      <ProblemSection />
       <PillarsSection />
-      <AudienceSection />
+      <ProblemSection />
       <AlineTeaser />
+      <AudienceSection />
+      <NewsletterSection />
       <FeaturedCatalog />
       <FinalCTA />
     </>
