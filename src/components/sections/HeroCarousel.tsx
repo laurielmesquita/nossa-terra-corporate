@@ -167,13 +167,13 @@ export default function HeroCarousel() {
       <div className="absolute bottom-10 left-10 z-20 flex gap-4 md:flex-row flex-col">
         <button 
           onClick={prevSlide}
-          className="w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-teal-950 transition-all"
+          className="w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-teal-950 hover:scale-110 active:scale-95 transition-all duration-300"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button 
           onClick={nextSlide}
-          className="w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-teal-950 transition-all"
+          className="w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-teal-950 hover:scale-110 active:scale-95 transition-all duration-300"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
@@ -185,7 +185,11 @@ export default function HeroCarousel() {
           <button
             key={i}
             onClick={() => setCurrentSlide(i)}
-            className={`h-1.5 transition-all duration-500 rounded-full ${i === currentSlide ? "w-12 bg-teal-400" : "w-6 bg-white/20 hover:bg-white/40"}`}
+            className={`h-1.5 transition-all duration-500 rounded-full cursor-pointer ${
+              i === currentSlide 
+                ? "w-12 bg-teal-400" 
+                : "w-6 bg-white/20 hover:bg-white/60 hover:w-8"
+            }`}
           />
         ))}
       </div>
