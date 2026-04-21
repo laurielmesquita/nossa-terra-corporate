@@ -32,6 +32,10 @@ export const properties: Property[] = [
     videoUrl: "/assets/customers/2404-flm/videos/02-panoramica-drone-01.mp4",
     specs: [
       { label: "Matriz Hídrica", value: "07 Poços (4 Solares)" },
+      { label: "Teor de Argila", value: "28% - 35% (Média)" },
+      { label: "Altitude", value: "320m - 380m" },
+      { label: "Topografia", value: "Plana / Suave Ondulada" },
+      { label: "Matéria Orgânica", value: "2.5% — 3.2%" },
       { label: "Pluviometria", value: "1.200mm - 1.400mm" },
       { label: "Benfeitorias", value: "Sede 7 Suítes + Piscina" },
       { label: "Operacional", value: "Alojamento 30 Pessoas" }

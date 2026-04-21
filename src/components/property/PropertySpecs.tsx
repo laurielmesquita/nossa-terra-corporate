@@ -6,7 +6,10 @@ import {
   Zap, 
   Home, 
   Users, 
-  Map 
+  Map,
+  Mountain,
+  LayoutGrid,
+  FlaskConical
 } from "lucide-react";
 
 interface SpecItem {
@@ -27,6 +30,9 @@ export function PropertySpecs({ description, specs }: PropertySpecsProps) {
     if (l.includes("benfeitorias") || l.includes("sede")) return Home;
     if (l.includes("operacional") || l.includes("alojamento")) return Users;
     if (l.includes("argila") || l.includes("solo")) return Map;
+    if (l.includes("altitude")) return Mountain;
+    if (l.includes("topografia")) return LayoutGrid;
+    if (l.includes("orgânica") || l.includes("matéria")) return FlaskConical;
     return Map;
   };
 
