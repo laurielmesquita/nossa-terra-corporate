@@ -20,7 +20,7 @@ export function MediaGallery({ items }: MediaGalleryProps) {
   const displayItems = items.slice(0, 5);
 
   return (
-    <section className="py-24 bg-teal-darkest text-white overflow-hidden">
+    <section id="galeria" className="py-24 bg-teal-darkest text-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-teal-accent mb-6">

@@ -30,12 +30,16 @@ export function PropertyHero({ title, location, type, videoUrl }: PropertyHeroPr
         <div className="absolute inset-0 bg-primary/20" />
       )}
 
+      {/* Technical Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.1] pointer-events-none z-10" 
+           style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+
       {/* Cinematic Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-darkest/40 via-transparent to-teal-darkest" />
-      <div className="absolute inset-0 bg-gradient-to-r from-teal-darkest/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-darkest/60 via-transparent to-teal-darkest z-20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-darkest/80 via-transparent to-transparent z-20" />
 
       {/* Content Container */}
-      <div className="absolute inset-0 flex items-end">
+      <div className="absolute inset-0 flex items-end z-30">
         <div className="container mx-auto px-6 lg:px-8 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -45,26 +49,34 @@ export function PropertyHero({ title, location, type, videoUrl }: PropertyHeroPr
           >
             <Link
               href="/imoveis"
-              className="group inline-flex items-center gap-2 text-white/50 hover:text-white transition-all mb-8 no-underline font-bold text-xs uppercase tracking-[0.2em]"
+              className="group inline-flex items-center gap-2 text-white/40 hover:text-white transition-all mb-10 no-underline font-bold text-[10px] uppercase tracking-[0.4em]"
             >
-              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+              <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
               Retornar ao Catálogo
             </Link>
 
-            <div className="space-y-6">
-              <Badge className="bg-teal-accent text-white px-5 py-2 rounded-full font-bold uppercase text-[10px] tracking-[0.15em] border-none shadow-lg shadow-teal-accent/20">
-                {type}
-              </Badge>
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <Badge className="bg-teal-accent text-white px-6 py-2 rounded-full font-black uppercase text-[9px] tracking-[0.2em] border-none shadow-xl shadow-teal-accent/30">
+                  {type}
+                </Badge>
+                <div className="h-[1px] w-12 bg-white/20" />
+                <span className="text-[10px] font-bold text-white/40 uppercase tracking-[0.3em]">Ativo Corporate</span>
+              </div>
 
-              <h1 className="text-5xl md:text-8xl font-serif font-extrabold text-white tracking-tight leading-[0.9] drop-shadow-2xl">
-                {title}
+              <h1 className="text-6xl md:text-9xl font-serif font-black text-white tracking-tighter leading-[0.85] drop-shadow-2xl">
+                {title.split('—')[0]} <br />
+                <span className="text-teal-accent italic">{title.split('—')[1] || ''}</span>
               </h1>
 
-              <div className="flex items-center gap-4 text-teal-light/80 font-bold">
-                <div className="p-2 bg-white/10 backdrop-blur-md rounded-lg">
+              <div className="flex items-center gap-6 text-white/80 font-medium">
+                <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl">
                   <MapPin className="w-6 h-6 text-teal-accent" />
                 </div>
-                <span className="text-xl md:text-2xl tracking-tight">{location}</span>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-teal-accent mb-1">Localização Estratégica</p>
+                  <span className="text-xl md:text-3xl tracking-tight font-serif italic">{location}</span>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -73,11 +85,14 @@ export function PropertyHero({ title, location, type, videoUrl }: PropertyHeroPr
 
       {/* Scroll Indicator */}
       <motion.div 
-        animate={{ y: [0, 10, 0] }} 
+        animate={{ y: [0, 10, 0], opacity: [0.2, 0.5, 0.2] }} 
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 z-30"
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
+        <div className="flex flex-col items-center gap-4">
+          <span className="text-[9px] font-bold uppercase tracking-[0.5em] vertical-text">Scroll</span>
+          <div className="w-[1px] h-16 bg-gradient-to-b from-teal-accent via-white/50 to-transparent" />
+        </div>
       </motion.div>
     </section>
   );

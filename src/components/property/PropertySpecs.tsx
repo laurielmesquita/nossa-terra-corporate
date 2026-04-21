@@ -26,71 +26,101 @@ export function PropertySpecs({ description, specs }: PropertySpecsProps) {
     if (l.includes("pluviometria")) return Zap;
     if (l.includes("benfeitorias") || l.includes("sede")) return Home;
     if (l.includes("operacional") || l.includes("alojamento")) return Users;
+    if (l.includes("argila") || l.includes("solo")) return Map;
     return Map;
   };
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="especificacoes" className="relative py-32 bg-background overflow-hidden">
+      {/* Technical Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+           style={{ backgroundImage: `radial-gradient(circle, #0F3D35 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+
+      <div className="container relative z-10 mx-auto px-6 lg:px-8">
         
-        {/* 1. Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-teal-accent mb-6">
-            Dossiê de Análise
-          </h2>
-          <h3 className="text-4xl md:text-6xl font-serif font-black text-teal-darkest leading-tight">
-            Vocação Produtiva & <br/>Análise Pericial
-          </h3>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          {/* Left Column: Narrative */}
+          <div id="visao-geral" className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="text-xs font-black uppercase tracking-[0.5em] text-teal-accent mb-8 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-teal-accent" />
+                Dossiê de Ativo
+              </h2>
+              <h3 className="text-5xl md:text-7xl font-serif font-black text-teal-darkest leading-[1.1] mb-12 tracking-tight">
+                Vocação Produtiva & <br/>
+                <span className="text-teal-accent italic">Análise Pericial</span>
+              </h3>
+            </motion.div>
 
-        {/* 2. Technical Status Bar (Horizontal Seals) */}
-        <div className="flex flex-wrap gap-4 mb-16 pb-8 border-b border-teal-dark/5">
-          {specs.map((spec, index) => {
-            const Icon = getIcon(spec.label);
-            return (
-              <motion.div
-                key={spec.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-4 bg-teal-light/30 border border-teal-accent/10 px-6 py-4 rounded-2xl group hover:bg-white hover:shadow-xl hover:shadow-teal-dark/5 transition-all"
-              >
-                <div className="p-2 bg-white rounded-xl text-teal-accent group-hover:scale-110 transition-transform shadow-sm">
-                  <Icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-teal-mid/60 mb-0.5">
-                    {spec.label}
-                  </p>
-                  <p className="text-sm font-black text-teal-darkest">
-                    {spec.value}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="prose prose-xl prose-teal text-teal-darkest/70 font-medium leading-[1.8] max-w-none"
+            >
+              <p className="first-letter:text-8xl first-letter:font-serif first-letter:font-black first-letter:text-teal-accent first-letter:mr-6 first-letter:float-left first-letter:leading-none whitespace-pre-line">
+                {description}
+              </p>
+            </motion.div>
+          </div>
 
-        {/* 3. Deep Narrative (Full Width Reading) */}
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="prose prose-2xl prose-teal text-teal-darkest/70 font-medium leading-[1.8]"
-          >
-            <p className="first-letter:text-7xl first-letter:font-serif first-letter:font-black first-letter:text-teal-accent first-letter:mr-4 first-letter:float-left whitespace-pre-line">
-              {description}
-            </p>
-          </motion.div>
+          {/* Right Column: Technical Specs */}
+          <div className="lg:col-span-5">
+            <div className="sticky top-32 space-y-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-teal-mid/50 mb-8 px-2">Kpis Operacionais</p>
+              
+              <div className="grid grid-cols-1 gap-4">
+                {specs.map((spec, index) => {
+                  const Icon = getIcon(spec.label);
+                  return (
+                    <motion.div
+                      key={spec.label}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-center justify-between bg-white border border-teal-dark/5 p-6 rounded-[2rem] group hover:border-teal-accent/30 hover:shadow-2xl hover:shadow-teal-dark/5 transition-all"
+                    >
+                      <div className="flex items-center gap-5">
+                        <div className="w-12 h-12 bg-teal-light/30 rounded-2xl flex items-center justify-center text-teal-accent group-hover:bg-teal-accent group-hover:text-white transition-all">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold uppercase tracking-widest text-teal-mid/60 mb-0.5">
+                            {spec.label}
+                          </p>
+                          <p className="text-base font-black text-teal-darkest tracking-tight">
+                            {spec.value}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="w-2 h-2 rounded-full bg-teal-accent/20 group-hover:bg-teal-accent transition-colors" />
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Verified Badge Decoration */}
+              <div className="mt-12 p-8 rounded-[3rem] bg-teal-darkest text-white relative overflow-hidden group">
+                <div className="absolute inset-0 opacity-10" 
+                     style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '20px 20px' }} />
+                <div className="relative z-10">
+                  <p className="text-[10px] font-black uppercase tracking-[0.4em] text-teal-accent mb-4">Certificação Nossa Terra</p>
+                  <p className="text-sm font-medium text-white/70 leading-relaxed">
+                    Este ativo passou por auditoria documental completa e vistoria técnica presencial de viabilidade.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
