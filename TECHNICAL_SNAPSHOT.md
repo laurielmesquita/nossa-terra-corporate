@@ -1,35 +1,57 @@
-# Snapshot Técnico: Nossa Terra Corporate
-**Data**: 21/04/2026
-**Contexto**: Registro pré-arquivamento para continuidade do redesign.
+# 📜 Snapshot Técnico: Nossa Terra Corporate
+> **Data:** 21 de Abril de 2026 | **Versão:** 1.5.0 (Dossiê Pericial Digital)
 
-## 1. Stack Tecnológica (Core)
-- **Framework**: Next.js (App Router) v16+
-- **Linguagem**: TypeScript v6.0+
-- **Styling**: Tailwind CSS v4 + Framer Motion (Animações Premium)
-- **Componentes UI**: Base UI + Shadcn/UI + Lucide React (Icons)
-- **Assets**: Gerenciamento de mídia de alta resolução (MP4/PNG HD) localmente.
+Este documento consolida o estado da arte após o redesign completo da página de ativos, servindo como semente (Seed) para a continuidade do projeto.
 
-## 2. Infraestrutura & Git
-- **Checkpoint Atual**: Commit `3ad5b0b` ("chore: technical snapshot before property detail page redesign").
-- **Status Remoto**: `origin/main` sincronizado (Push realizado com sucesso).
-- **Ajuste de Pipeline**: `http.postBuffer` configurado para 500MB localmente para suportar o *Payload* de mídias pesadas.
+---
 
-## 3. Estado da Implementação (Página de Ativos)
-- **Componentes Criados**:
+## 🛠️ Stack Tecnológico Atual
+- **Framework**: Next.js v16.2.4 (Turbopack habilitado).
+- **Core**: React v19.2.5 / TypeScript v6.0.3.
+- **Styling**: TailwindCSS v4 / Framer Motion (Animações).
+- **UI Components**: Shadcn/UI / Lucide React v1.8.0.
+- **Componentes Customizados**:
+    - `PropertyStickyNav`: Navegação técnica persistente.
     - `PropertyHero`: Hero cinematográfico com suporte a vídeo.
-    - `PropertySpecs`: Visualização técnica estilo "Dossiê".
+    - `PropertySpecs`: Dossiê de análise pericial com suporte a dados de solo.
+    - `PropertyMap`: Dashboard GIS interativo para análise GEO/CAR.
     - `MediaGallery`: Bento grid para evidências de infraestrutura.
-    - `FloatingWhatsAppCTA`: Layer de conversão flutuante.
-- **Modelagem de Dados**:
-    - Centralizada em `src/data/properties.ts` e `src/data/clients.ts`.
-    - Relacionamento Property -> Client estabelecido via `clientId`.
+    - `ClientTrustSection`: Integração de depoimentos e selos de confiança.
 
-## 4. Backlog de Redesign (Pendências/Seeds)
-- [ ] **Sticky Navigation**: Implementar `PropertyStickyNav.tsx` para seções técnicas.
-- [ ] **Technical Grid Pattern**: Aplicar o padrão de grade radial da `ProblemSection` no Hero e seções de dados.
-- [ ] **Integração de Clientes**: Exibir selos e depoimentos do proprietário associado no detalhe do imóvel.
-- [ ] **Interactive Maps**: (Opcional) Renderização de polígonos GEO/CAR.
-- [ ] **Performance Audit**: Validar LCP devido ao uso intenso de vídeos no Hero.
+---
 
-[NOTA TÉCNICA]
-**Rollback Point**: O commit `3ad5b0b` é o ponto de segurança absoluto. Caso o novo redesign falhe, o retorno para este estado garante 100% de funcionalidade.
+## 🏗️ Arquitetura de Design: Forensic-Intelligence
+Implementamos uma identidade visual focada em autoridade e transparência técnica:
+- **Identidade**: Paleta "Deep Teal" (`#0F3D35`) com "Teal Accent".
+- **Grid Patterns**: Padrão de grade radial aplicado em todas as seções para estética de "blueprint".
+- **UX**: Navegação fluida via âncoras e bordas arredondadas padronizadas em `2rem`.
+
+---
+
+## 🐄 Ativo em Foco: Fazenda Lagoa do Mato (FLM-5000)
+- **Narrativa**: Texto profissional focado em "Aptidão Agrícola" e "Viabilidade Financeira".
+- **Dados Técnicos**: 
+    - **Hídrica**: 07 poços (04 Solares) com vazão de 30k L/h.
+    - **Solo**: Teor de Argila integrado (25% - 35%).
+    - **Clima**: Pluviometria de 1.200 a 1.400 mm/ano.
+- **Mídia Autêntica**: Foto real da lavoura integrada no módulo geográfico.
+
+---
+
+## ✅ Tarefas Concluídas nesta Sessão
+1.  **Redesign da Página de Detalhes**: Implementação total dos novos componentes premium.
+2.  **Infrastructure Expansion**: Integração de dados de solo e narrativa de marca autoritária.
+3.  **Interactive Map**: Criação da interface GIS (GEO/CAR) com assets reais.
+4.  **UI Refactoring**: Padronização de border-radius e sincronização de âncoras de navegação.
+
+---
+
+## ⏳ Tarefas Pendentes (Backlog)
+- [ ] **SEO Optimization**: Configurar metadados dinâmicos por propriedade rural (`generateMetadata`).
+- [ ] **Performance Audit**: Validar LCP e otimizar assets pesados (Vídeos/Mapas).
+- [ ] **Interactive Maps**: Integração de polígonos GEO/CAR reais via GeoJSON/Mapbox.
+
+---
+
+## [NOTA TÉCNICA]
+**Seed System**: Utilize este arquivo para reinicializar o contexto técnico em novas sessões de desenvolvimento, garantindo a manutenção do "Estado da Arte" do projeto.
