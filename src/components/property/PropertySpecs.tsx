@@ -20,7 +20,6 @@ interface PropertySpecsProps {
 }
 
 export function PropertySpecs({ description, specs }: PropertySpecsProps) {
-  // Logic moved to Client Component to allow serialization
   const getIcon = (label: string) => {
     const l = label.toLowerCase();
     if (l.includes("hídrica") || l.includes("poços")) return Droplets;
@@ -33,74 +32,67 @@ export function PropertySpecs({ description, specs }: PropertySpecsProps) {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Narrative Analysis */}
-          <div className="lg:col-span-12 mb-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-teal-accent mb-6">
-                Dossiê de Análise
-              </h2>
-              <h3 className="text-3xl md:text-5xl font-serif font-black text-teal-darkest leading-tight">
-                Vocação Produtiva & <br/>Análise Pericial
-              </h3>
-            </motion.div>
-          </div>
+        
+        {/* 1. Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-teal-accent mb-6">
+            Dossiê de Análise
+          </h2>
+          <h3 className="text-4xl md:text-6xl font-serif font-black text-teal-darkest leading-tight">
+            Vocação Produtiva & <br/>Análise Pericial
+          </h3>
+        </motion.div>
 
-          {/* Left: Description Content */}
-          <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="prose prose-xl prose-teal text-muted-foreground font-medium leading-relaxed"
-            >
-              <p className="whitespace-pre-line">
-                {description}
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Right: Technical Specs Grid */}
-          <div className="lg:col-span-5">
-            <div className="grid grid-cols-1 gap-4">
-              {specs.map((spec, index) => {
-                const Icon = getIcon(spec.label);
-                return (
-                  <motion.div
-                    key={spec.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="group relative bg-white/40 backdrop-blur-xl border border-teal-dark/5 rounded-3xl p-8 transition-all hover:bg-white/80 hover:shadow-2xl hover:shadow-teal-dark/5"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-mid/50 mb-1">
-                          {spec.label}
-                        </p>
-                        <p className="text-xl font-black text-teal-darkest tracking-tight">
-                          {spec.value}
-                        </p>
-                      </div>
-                      <div className="p-4 bg-teal-light rounded-2xl text-teal-accent group-hover:scale-110 transition-transform">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-
+        {/* 2. Technical Status Bar (Horizontal Seals) */}
+        <div className="flex flex-wrap gap-4 mb-16 pb-8 border-b border-teal-dark/5">
+          {specs.map((spec, index) => {
+            const Icon = getIcon(spec.label);
+            return (
+              <motion.div
+                key={spec.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-4 bg-teal-light/30 border border-teal-accent/10 px-6 py-4 rounded-2xl group hover:bg-white hover:shadow-xl hover:shadow-teal-dark/5 transition-all"
+              >
+                <div className="p-2 bg-white rounded-xl text-teal-accent group-hover:scale-110 transition-transform shadow-sm">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-teal-mid/60 mb-0.5">
+                    {spec.label}
+                  </p>
+                  <p className="text-sm font-black text-teal-darkest">
+                    {spec.value}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* 3. Deep Narrative (Full Width Reading) */}
+        <div className="max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="prose prose-2xl prose-teal text-teal-darkest/70 font-medium leading-[1.8]"
+          >
+            <p className="first-letter:text-7xl first-letter:font-serif first-letter:font-black first-letter:text-teal-accent first-letter:mr-4 first-letter:float-left whitespace-pre-line">
+              {description}
+            </p>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );
