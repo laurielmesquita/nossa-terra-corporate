@@ -8,7 +8,8 @@ const navItems = [
   { id: "visao-geral", label: "Visão Geral" },
   { id: "especificacoes", label: "Dossiê Técnico" },
   { id: "galeria", label: "Infraestrutura" },
-  { id: "juridico", label: "Jurídico & Ambiental" },
+  { id: "geografico", label: "Análise GEO" },
+  { id: "juridico", label: "Jurídico" },
 ];
 
 export function PropertyStickyNav() {

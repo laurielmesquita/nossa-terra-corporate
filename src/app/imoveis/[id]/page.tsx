@@ -16,6 +16,7 @@ import { MediaGallery } from "@/components/property/MediaGallery";
 import { FloatingWhatsAppCTA } from "@/components/property/FloatingWhatsAppCTA";
 import { PropertyStickyNav } from "@/components/property/PropertyStickyNav";
 import { ClientTrustSection } from "@/components/property/ClientTrustSection";
+import { PropertyMap } from "@/components/property/PropertyMap";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -61,7 +62,10 @@ export default async function PropertyPage({ params }: Props) {
       {/* 3. Proof of Infrastructure (Media Gallery) */}
       <MediaGallery items={mediaItems} />
 
-      {/* 4. Trust Matrix & Client Integration */}
+      {/* 4. Interactive GEO/CAR Analysis */}
+      <PropertyMap location={property.location} area={property.area} />
+
+      {/* 5. Trust Matrix & Client Integration */}
       <ClientTrustSection client={client} />
 
       {/* 5. Contact / Lead Generation Section */}
