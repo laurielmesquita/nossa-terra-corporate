@@ -1,6 +1,7 @@
 import { properties } from "@/data/properties";
 import { clients } from "@/data/clients";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { 
   Droplets, 
   ShieldCheck,
@@ -22,6 +23,44 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const property = properties.find((p) => p.id === id);
+
+  if (!property) {
+    return {
+      title: "Propriedade não encontrada",
+    };
+  }
+
+  const title = `${property.title} | Nossa Terra Corporate`;
+  const description = property.description.substring(0, 160) + "...";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: [
+        {
+          url: property.mainImage,
+          width: 1200,
+          height: 630,
+          alt: property.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [property.mainImage],
+    },
+  };
+}
+
 export default async function PropertyPage({ params }: Props) {
   const { id } = await params;
   const property = properties.find((p) => p.id === id);
@@ -40,8 +79,32 @@ export default async function PropertyPage({ params }: Props) {
     ...property.images.map(img => ({ type: "image" as const, url: img, alt: property.title }))
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": property.title,
+    "description": property.description,
+    "image": property.mainImage,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": property.location,
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": property.price === "Sob Consulta" ? undefined : property.price,
+      "priceCurrency": "BRL"
+    },
+    "identifier": property.id
+  };
+
   return (
     <main className="bg-background min-h-screen selection:bg-teal-accent selection:text-white">
+      {/* 0. Technical SEO Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* 0. Sticky technical navigation */}
       <PropertyStickyNav />
 
@@ -51,6 +114,7 @@ export default async function PropertyPage({ params }: Props) {
         location={property.location}
         type={property.type}
         videoUrl={property.videoUrl}
+        mainImage={property.mainImage}
       />
 
       {/* 2. Technical Specs & Narrative */}
@@ -62,11 +126,11 @@ export default async function PropertyPage({ params }: Props) {
       {/* 3. Proof of Infrastructure (Media Gallery) */}
       <MediaGallery items={mediaItems} />
 
-      {/* 4. Interactive GEO/CAR Analysis */}
-      <PropertyMap location={property.location} area={property.area} />
-
-      {/* 5. Trust Matrix & Client Integration */}
+      {/* 4. Trust Matrix & Client Integration */}
       <ClientTrustSection client={client} />
+
+      {/* 5. Interactive GEO/CAR Analysis */}
+      <PropertyMap location={property.location} area={property.area} />
 
       {/* 5. Contact / Lead Generation Section */}
       <section id="contato" className="py-32 bg-white relative overflow-hidden">

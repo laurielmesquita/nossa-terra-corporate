@@ -10,9 +10,10 @@ interface PropertyHeroProps {
   location: string;
   type: string;
   videoUrl?: string;
+  mainImage: string;
 }
 
-export function PropertyHero({ title, location, type, videoUrl }: PropertyHeroProps) {
+export function PropertyHero({ title, location, type, videoUrl, mainImage }: PropertyHeroProps) {
   return (
     <section className="relative h-[85vh] w-full overflow-hidden bg-teal-darkest">
       {/* Immersive Video/Image Background */}
@@ -22,12 +23,16 @@ export function PropertyHero({ title, location, type, videoUrl }: PropertyHeroPr
           loop
           muted
           playsInline
+          poster={mainImage}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
       ) : (
-        <div className="absolute inset-0 bg-primary/20" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-40" 
+          style={{ backgroundImage: `url(${mainImage})` }}
+        />
       )}
 
       {/* Technical Grid Pattern */}
