@@ -12,9 +12,34 @@ export interface Property {
   specs: { label: string; value: string }[];
   featured: boolean;
   opportunity: boolean;
+  clientId?: string; // Link to clients.ts
 }
 
 export const properties: Property[] = [
+  {
+    id: "fazenda-lagoa-do-mato-5000",
+    title: "Fazenda Lagoa do Mato — 5.000 ha",
+    location: "Lagoa do Mato / MA",
+    price: "Sob Consulta",
+    area: "5.000 ha",
+    type: "Integração Lavoura-Pecuária",
+    description: "Ativo de alto desempenho com infraestrutura completa para pecuária intensiva e lavoura. Destaque para autonomia hídrica total com energia solar e sede de luxo.",
+    mainImage: "/assets/customers/2404-flm/fotos/01-sede-principal-panoramica.jpg",
+    images: [
+      "/assets/customers/2404-flm/fotos/02-sede-detalhe-varanda.jpeg",
+      "/assets/customers/2404-flm/fotos/03-area-produtiva-lavoura.jpeg"
+    ],
+    videoUrl: "/assets/customers/2404-flm/videos/02-panoramica-drone-01.mp4",
+    specs: [
+      { label: "Matriz Hídrica", value: "07 Poços (4 Solares)" },
+      { label: "Pluviometria", value: "1.200mm - 1.400mm" },
+      { label: "Benfeitorias", value: "Sede 7 Suítes + Piscina" },
+      { label: "Operacional", value: "Alojamento 30 Pessoas" }
+    ],
+    featured: true,
+    opportunity: true,
+    clientId: "lagoa-do-mato"
+  },
   {
     id: "fazenda-vale-gurgueia",
     title: "Fazenda Vale do Gurgueia",
@@ -37,7 +62,8 @@ export const properties: Property[] = [
       { label: "Documentação", value: "GEO / CAR / CCIR 100% Regular" }
     ],
     featured: true,
-    opportunity: true
+    opportunity: true,
+    clientId: "cliente-exemplo"
   },
   {
     id: "reserva-cerrado-sul",
