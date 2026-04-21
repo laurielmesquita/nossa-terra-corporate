@@ -23,7 +23,7 @@ export const properties: Property[] = [
     price: "Sob Consulta",
     area: "5.000 ha",
     type: "Integração Lavoura-Pecuária",
-    description: "Ativo de alto desempenho com infraestrutura completa para pecuária intensiva e lavoura. Destaque para autonomia hídrica total com energia solar e sede de luxo.",
+    description: "Situada no estratégico eixo de expansão agrícola de Lagoa do Mato (MA), a Fazenda Lagoa do Mato é um ativo de 5.000 hectares projetado para operações de alta escala. Com 1.000 hectares já consolidados em regime de integração lavoura-pecuária, a propriedade destaca-se por sua aptidão agrícola superior e uma matriz hídrica inigualável, composta por 07 poços artesianos com vazão de 30k L/h, sendo 04 deles operados via energia solar. Inserida em uma janela de pluviometria estável entre 1.200 e 1.400 mm/ano, o ativo oferece infraestrutura operacional completa — incluindo galpões de maquinário e alojamento técnico para 30 colaboradores — equilibrada por uma sede de alto luxo com 07 suítes, escritório administrativo e lazer privativo, garantindo viabilidade financeira e excelência residencial para o investidor institucional.",
     mainImage: "/assets/customers/2404-flm/fotos/01-sede-principal-panoramica.jpg",
     images: [
       "/assets/customers/2404-flm/fotos/02-sede-detalhe-varanda.jpeg",
