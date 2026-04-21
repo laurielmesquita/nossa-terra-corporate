@@ -50,7 +50,7 @@ export function PropertyMap({ location, area }: PropertyMapProps) {
                 "absolute inset-0 bg-cover bg-center transition-all duration-1000",
                 activeLayer === "satellite" ? "opacity-100 grayscale-0" : "opacity-40 grayscale"
               )}
-              style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop')` }}
+              style={{ backgroundImage: `url('/assets/generated/flm-map-bg.png')` }}
             />
 
             {/* SVG Technical Polygon (The "CAR" visualization) */}

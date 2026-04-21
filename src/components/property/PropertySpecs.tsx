@@ -109,7 +109,7 @@ export function PropertySpecs({ description, specs }: PropertySpecsProps) {
               </div>
 
               {/* Verified Badge Decoration */}
-              <div className="mt-12 p-8 rounded-[3rem] bg-teal-darkest text-white relative overflow-hidden group">
+              <div className="mt-12 p-8 rounded-[2rem] bg-teal-darkest text-white relative overflow-hidden group">
                 <div className="absolute inset-0 opacity-10" 
                      style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '20px 20px' }} />
                 <div className="relative z-10">
