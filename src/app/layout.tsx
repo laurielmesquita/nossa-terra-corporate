@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nossaterra.imb.br"),
   title: {
     default: "Nossa Terra Imobiliária — Consultoria e Inteligência Documental Rural",
     template: "%s | Nossa Terra Imobiliária",
@@ -35,6 +36,20 @@ export const metadata: Metadata = {
     title: "Nossa Terra — Inteligência Documental e Consultoria Rural",
     description:
       "Segurança jurídica, análise técnica e crédito rural em um só lugar. Proteja seu patrimônio no campo com quem domina a técnica e a lei.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nossa Terra Imobiliária",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nossa Terra — Inteligência Documental e Consultoria Rural",
+    description: "Segurança jurídica, análise técnica e crédito rural em um só lugar.",
+    images: ["/opengraph-image.png"],
   },
   robots: { index: true, follow: true },
 };

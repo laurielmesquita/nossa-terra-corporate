@@ -2,6 +2,28 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { ShieldCheck, Scale, TrendingUp } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre a Nossa Terra",
+  description: "Conheça a história da Nossa Terra e a expertise técnica da Aline Nascimento em consultoria imobiliária rural.",
+  openGraph: {
+    title: "Sobre a Nossa Terra | Inteligência Rural",
+    description: "Segurança jurídica e técnica liderada por Aline Nascimento.",
+    images: [
+      {
+        url: "/images/aline-perita.png",
+        width: 1200,
+        height: 630,
+        alt: "Aline Nascimento - Nossa Terra",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/aline-perita.png"],
+  },
+};
 
 export default function SobrePage() {
   const whatsappBtnClass = "bg-accent hover:bg-teal-mid text-white rounded-2xl h-14 px-10 font-bold shadow-2xl shadow-accent/40 border-none transition-all hover:scale-105 flex items-center justify-center no-underline";

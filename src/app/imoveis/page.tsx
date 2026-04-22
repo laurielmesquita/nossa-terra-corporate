@@ -8,6 +8,22 @@ import { MapPin, Maximize2, ArrowRight, Filter } from "lucide-react";
 export const metadata = {
   title: "Catálogo de Propriedades Selecionadas — Nossa Terra",
   description: "Explore nossa curadoria de fazendas de alto potencial produtivo e segurança jurídica garantida no Norte do PI e Sul do MA.",
+  openGraph: {
+    title: "Catálogo de Fazendas de Alta Escala | Nossa Terra",
+    description: "Curadoria técnica de ativos rurais com segurança jurídica total.",
+    images: [
+      {
+        url: "/assets/customers/2603-flm/fotos/01-sede-principal-panoramica.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Catálogo de Propriedades Nossa Terra",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/assets/customers/2603-flm/fotos/01-sede-principal-panoramica.jpg"],
+  },
 };
 
 export default function ListingPage() {
