@@ -10,6 +10,8 @@ export interface Property {
   mainImage: string;
   images: string[];
   videoUrl?: string;
+  coordinates?: string;
+  mapImage?: string;
   specs: { label: string; value: string }[];
   featured: boolean;
   opportunity: boolean;
@@ -32,6 +34,8 @@ export const properties: Property[] = [
       "/assets/customers/2603-flm/fotos/03-area-produtiva-lavoura.jpeg"
     ],
     videoUrl: "/assets/customers/2603-flm/videos/02-panoramica-drone-01.mp4",
+    coordinates: "LAT: -10.3421° / LONG: -45.9238°",
+    mapImage: "/assets/customers/2603-flm/fotos/03-area-produtiva-lavoura.jpeg",
     specs: [
       { label: "Matriz Hídrica", value: "07 Poços (4 Solares)" },
       { label: "Teor de Argila", value: "28% - 35% (Média)" },
@@ -62,6 +66,8 @@ export const properties: Property[] = [
       "/assets/customers/2603-fnsa/fotos/04-infraestrutura-cerca-divisoria.jpg"
     ],
     videoUrl: "/assets/customers/2603-fnsa/videos/01-apresentacao-geral-fnsa.mp4",
+    coordinates: "LAT: -5.2861° / LONG: -42.2345°",
+    mapImage: "/assets/customers/2603-fnsa/fotos/04-infraestrutura-cerca-divisoria.jpg",
     specs: [
       { label: "Aproveitamento", value: "50% Agricultura" },
       { label: "Recursos Hídricos", value: "Nascente Própria" },
@@ -82,6 +88,8 @@ export const properties: Property[] = [
     description: "Propriedade produtiva de 653 hectares em Cocal (PI), totalmente cercada e com divisórias. Infraestrutura operacional de ponta com centro de manejo completo (embarcadouro, brete, balança e curral), energia trifásica e sistema de irrigação por aspersão em 10 hectares. Inclui casa sede de alto padrão com piscinas e churrasqueira, galpão conjugado e trator Massey Ferguson 292. Ativo de porteira fechada com 200 cabeças de gado e 100 búfalos.",
     tagline: "Ativo de porteira fechada com 653 ha, infraestrutura de irrigação e gado de elite.",
     mainImage: "/assets/customers/2603-fc/fotos/01-placeholder-dossie.png",
+    coordinates: "LAT: -3.4731° / LONG: -41.5542°",
+    mapImage: "/assets/customers/2603-fc/fotos/01-placeholder-dossie.png",
     images: [],
     specs: [
       { label: "Irrigação", value: "10 ha Aspersão" },

@@ -131,7 +131,13 @@ export default async function PropertyPage({ params }: Props) {
       <ClientTrustSection client={client} />
 
       {/* 5. Interactive GEO/CAR Analysis */}
-      <PropertyMap location={property.location} area={property.area} />
+      <PropertyMap 
+        location={property.location} 
+        area={property.area} 
+        propertyName={property.title}
+        mapImage={property.mapImage}
+        coordinates={property.coordinates}
+      />
 
       {/* 5. Contact / Lead Generation Section */}
       <section id="contato" className="py-32 bg-white relative overflow-hidden">

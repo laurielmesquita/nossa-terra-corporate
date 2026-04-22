@@ -15,9 +15,18 @@ import { cn } from "@/lib/utils";
 interface PropertyMapProps {
   location: string;
   area: string;
+  propertyName: string;
+  mapImage?: string;
+  coordinates?: string;
 }
 
-export function PropertyMap({ location, area }: PropertyMapProps) {
+export function PropertyMap({ 
+  location, 
+  area, 
+  propertyName,
+  mapImage = "/assets/customers/2603-flm/fotos/03-area-produtiva-lavoura.jpeg",
+  coordinates = "LAT: -10.3421° / LONG: -45.9238°"
+}: PropertyMapProps) {
   const [activeLayer, setActiveLayer] = useState<"satellite" | "car" | "topo">("car");
 
   return (
@@ -44,13 +53,13 @@ export function PropertyMap({ location, area }: PropertyMapProps) {
         <div className="relative group">
           {/* Main Map Canvas (Mock) */}
           <div className="relative w-full h-[600px] md:h-[750px] bg-slate-900 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-            {/* Satellite Background Placeholder (Darkened for UI contrast) */}
+            {/* Satellite Background Placeholder */}
             <div 
               className={cn(
                 "absolute inset-0 bg-cover bg-center transition-all duration-1000",
                 activeLayer === "satellite" ? "opacity-100 grayscale-0" : "opacity-40 grayscale"
               )}
-              style={{ backgroundImage: `url('/assets/customers/2604-flm/fotos/03-area-produtiva-lavoura.jpeg')` }}
+              style={{ backgroundImage: `url('${mapImage}')` }}
             />
 
             {/* SVG Technical Polygon (The "CAR" visualization) */}
@@ -80,7 +89,7 @@ export function PropertyMap({ location, area }: PropertyMapProps) {
                 cx="600" cy="100" r="4" fill="#14b8a6" 
               />
               <text x="350" y="250" className="fill-teal-accent text-[12px] font-black uppercase tracking-widest opacity-60">
-                Área Consolidada: 5.000 ha
+                Área Consolidada: {area}
               </text>
             </svg>
 
@@ -90,7 +99,7 @@ export function PropertyMap({ location, area }: PropertyMapProps) {
                 <div className="flex items-center gap-3">
                   <LocateFixed className="w-4 h-4 text-teal-accent" />
                   <div className="text-[10px] font-mono text-white/70">
-                    LAT: -10.3421° / LONG: -45.9238°
+                    {coordinates}
                   </div>
                 </div>
                 <div className="h-[1px] w-full bg-white/10" />
@@ -150,7 +159,7 @@ export function PropertyMap({ location, area }: PropertyMapProps) {
         {/* Narrative Under Map */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <p className="text-xl text-white/40 leading-relaxed font-medium">
-            Toda a demarcação territorial da <span className="text-white">Fazenda Lagoa do Mato</span> foi validada por auditoria técnica e georreferenciamento de precisão, garantindo a <span className="text-teal-accent">integridade da matrícula</span> e a conformidade absoluta com o Código Florestal Brasileiro.
+            Toda a demarcação territorial da <span className="text-white">{propertyName}</span> foi validada por auditoria técnica e georreferenciamento de precisão, garantindo a <span className="text-teal-accent">integridade da matrícula</span> e a conformidade absoluta com o Código Florestal Brasileiro.
           </p>
           <div className="flex flex-wrap gap-4 justify-end">
             <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-teal-accent uppercase tracking-widest">
