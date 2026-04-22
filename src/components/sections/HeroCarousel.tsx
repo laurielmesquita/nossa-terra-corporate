@@ -12,6 +12,10 @@ const outlineClass = "w-full sm:w-auto bg-white/5 hover:bg-white/10 border borde
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const AUTOPLAY_TIME = 12000;
+  const PROGRESS_STEP = 100;
 
   // Generate slides for featured properties
   const propertySlides = properties.filter(p => p.featured).map((prop) => ({
@@ -107,14 +111,30 @@ export default function HeroCarousel() {
 
   const slides = [...propertySlides, brandSlide];
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setProgress(0);
+  };
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setProgress(0);
+  };
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(nextSlide, 12000);
-    return () => clearInterval(timer);
-  }, [isPaused, currentSlide]);
+
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          nextSlide();
+          return 0;
+        }
+        return prev + (PROGRESS_STEP / AUTOPLAY_TIME) * 100;
+      });
+    }, PROGRESS_STEP);
+
+    return () => clearInterval(interval);
+  }, [isPaused, slides.length]);
 
   return (
     <section 
@@ -189,14 +209,33 @@ export default function HeroCarousel() {
 
         <button 
           onClick={() => setIsPaused(!isPaused)}
-          className={`w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 hover:scale-110 ${
+          className={`w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 hover:scale-110 relative group ${
             isPaused 
               ? "bg-teal-400 border-teal-400 text-teal-950 shadow-lg shadow-teal-400/20" 
               : "bg-white/5 backdrop-blur-xl text-white hover:bg-white/10"
           }`}
           title={isPaused ? "Retomar Reprodução" : "Pausar Carrossel"}
         >
-          {isPaused ? <Play className="w-5 h-5 fill-current" /> : <Pause className="w-5 h-5 fill-current" />}
+          {/* Progress Circle (Loader) */}
+          {!isPaused && (
+            <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none overflow-visible">
+              <circle
+                cx="24"
+                cy="24"
+                r="22"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeDasharray={138.2} // 2 * PI * 22
+                strokeDashoffset={138.2 - (138.2 * progress) / 100}
+                className="text-teal-400 transition-all duration-300 ease-linear"
+              />
+            </svg>
+          )}
+          
+          <div className="relative z-10">
+            {isPaused ? <Play className="w-5 h-5 fill-current" /> : <Pause className="w-5 h-5 fill-current" />}
+          </div>
         </button>
       </div>
 
@@ -205,7 +244,10 @@ export default function HeroCarousel() {
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrentSlide(i)}
+            onClick={() => {
+              setCurrentSlide(i);
+              setProgress(0);
+            }}
             className={`h-1.5 transition-all duration-500 rounded-full cursor-pointer ${
               i === currentSlide 
                 ? "w-12 bg-teal-400" 
