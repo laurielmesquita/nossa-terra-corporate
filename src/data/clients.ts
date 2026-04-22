@@ -25,27 +25,34 @@ export const clients: Client[] = [
     shortName: "FLM",
     type: "individual",
     featured: true,
-    contractDate: "2026-04",
+    contractDate: "2026-03",
     testimonial: {
       quote: "A estrutura organizacional e a consultoria documental da Nossa Terra nos deram a segurança necessária para consolidar 5.000 hectares com autonomia total.",
       author: "Proprietário",
       role: "Fazenda Lagoa do Mato - MA",
-      date: "2026-04"
+      date: "2026-03"
     }
   },
   {
-    id: "cliente-exemplo",
-    name: "Grupo Agropecuário Exemplo",
-    shortName: "Agro-Exemplo",
-    type: "enterprise",
-    logoUrl: "/assets/logos/clients/agro-exemplo.png",
+    id: "novo-santo-antonio",
+    name: "Fazenda Novo Santo Antônio",
+    shortName: "FNSA",
+    type: "individual",
     featured: true,
-    contractDate: "2026-04",
+    contractDate: "2026-03",
     testimonial: {
-      quote: "A consultoria técnica e jurídica da Nossa Terra foi fundamental para a expansão de nossas operações no Piauí. Segurança total em cada hectare.",
-      author: "Dr. Roberto Silva",
-      role: "CEO - Agro Exemplo",
-      date: "2026-04"
+      quote: "Excelente oportunidade no interior do Piauí. Região tranquila, com fácil acesso e ótima localização para pecuária e agricultura.",
+      author: "Proprietário",
+      role: "Fazenda Novo Santo Antônio - PI",
+      date: "2026-03"
     }
+  },
+  {
+    id: "fazenda-cocal",
+    name: "Fazenda Cocal",
+    shortName: "FC",
+    type: "individual",
+    featured: true,
+    contractDate: "2026-03"
   }
 ];
