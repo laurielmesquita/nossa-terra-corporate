@@ -21,7 +21,7 @@ export interface Client {
 export const clients: Client[] = [
   {
     id: "lagoa-do-mato",
-    name: "Fazenda Lagoa do Mato",
+    name: "Fazenda em Lagoa do Mato",
     shortName: "FLM",
     type: "individual",
     featured: true,
@@ -29,13 +29,13 @@ export const clients: Client[] = [
     testimonial: {
       quote: "A estrutura organizacional e a consultoria documental da Nossa Terra nos deram a segurança necessária para consolidar 5.000 hectares com autonomia total.",
       author: "Proprietário",
-      role: "Fazenda Lagoa do Mato - MA",
+      role: "Fazenda em Lagoa do Mato - MA",
       date: "2026-03"
     }
   },
   {
     id: "novo-santo-antonio",
-    name: "Fazenda Novo Santo Antônio",
+    name: "Fazenda em Novo Santo Antônio",
     shortName: "FNSA",
     type: "individual",
     featured: true,
@@ -43,13 +43,13 @@ export const clients: Client[] = [
     testimonial: {
       quote: "Excelente oportunidade no interior do Piauí. Região tranquila, com fácil acesso e ótima localização para pecuária e agricultura.",
       author: "Proprietário",
-      role: "Fazenda Novo Santo Antônio - PI",
+      role: "Fazenda em Novo Santo Antônio - PI",
       date: "2026-03"
     }
   },
   {
     id: "fazenda-cocal",
-    name: "Fazenda Cocal",
+    name: "Fazenda em Cocal",
     shortName: "FC",
     type: "individual",
     featured: true,
