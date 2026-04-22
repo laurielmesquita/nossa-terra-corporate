@@ -15,7 +15,7 @@ export default function FeaturedCatalog() {
         {/* Header - Refined Architecture */}
         <div className="flex flex-col lg:flex-row items-baseline lg:items-end justify-between gap-12 mb-24 border-b border-muted pb-12">
           <div className="max-w-4xl">
-            <Badge variant="outline" className="text-nt-orange border-nt-orange/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] mb-8 bg-nt-orange-light/10">
+            <Badge variant="outline" className="text-nt-yellow border-nt-yellow/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] mb-8 bg-nt-yellow-light/10">
               Oportunidades Selecionadas
             </Badge>
             <h2 className="text-4xl md:text-6xl font-serif font-extrabold text-primary leading-tight">
@@ -52,7 +52,7 @@ export default function FeaturedCatalog() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-60" />
                 
                 {prop.opportunity && (
-                  <Badge className="absolute top-6 right-6 bg-nt-orange text-white px-4 py-1.5 rounded-xl font-bold uppercase text-[9px] tracking-widest leading-none shadow-xl border-none">
+                  <Badge className="absolute top-6 right-6 bg-nt-yellow text-teal-950 px-4 py-1.5 rounded-xl font-bold uppercase text-[9px] tracking-widest leading-none shadow-xl border-none">
                     Oportunidade
                   </Badge>
                 )}

@@ -40,6 +40,8 @@
   /* Nossa Terra extended */
   --nt-orange: #e8832a;
   --nt-orange-light: #fef3e8;
+  --nt-yellow: #FEDF00;
+  --nt-yellow-light: #FFF9C4;
   --nt-earth: #8b6f47;
 
   --radius: 0.75rem;
@@ -82,6 +84,8 @@
   --color-teal-light: var(--teal-light);
   --color-nt-orange: var(--nt-orange);
   --color-nt-orange-light: var(--nt-orange-light);
+  --color-nt-yellow: var(--nt-yellow);
+  --color-nt-yellow-light: var(--nt-yellow-light);
   --color-nt-earth: var(--nt-earth);
 
   /* Typography */

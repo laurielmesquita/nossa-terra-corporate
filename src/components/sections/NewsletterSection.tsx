@@ -7,7 +7,7 @@ export default function NewsletterSection() {
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="bg-primary rounded-[3.5rem] p-12 md:p-24 flex flex-col lg:flex-row items-center justify-between gap-16 border border-white/10 relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(15,61,53,0.5)]">
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent/30 rounded-full blur-[140px]" />
-          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-nt-orange/15 rounded-full blur-[120px]" />
+          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-nt-yellow/15 rounded-full blur-[120px]" />
           
           <div className="text-center lg:text-left relative z-10 max-w-2xl">
             <Badge className="bg-accent/20 text-accent border-accent/30 px-4 py-1 rounded-full mb-6 text-[10px] font-bold uppercase tracking-widest">

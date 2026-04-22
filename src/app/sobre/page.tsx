@@ -83,7 +83,7 @@ export default function SobrePage() {
                   <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 py-2 px-4 rounded-xl font-bold uppercase tracking-wider text-[10px]">
                     + Segurança Jurídica
                   </Badge>
-                  <Badge variant="secondary" className="bg-nt-orange-light text-nt-orange border-nt-orange/20 py-2 px-4 rounded-xl font-bold uppercase tracking-wider text-[10px]">
+                  <Badge variant="secondary" className="bg-nt-yellow-light text-nt-yellow border-nt-yellow/20 py-2 px-4 rounded-xl font-bold uppercase tracking-wider text-[10px]">
                     + Viabilidade Técnica
                   </Badge>
                 </div>

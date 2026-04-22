@@ -41,7 +41,7 @@ export default function ProblemSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 bg-nt-orange-light/10 backdrop-blur-xl border border-nt-orange/20 rounded-full px-4 py-1.5 mb-8 text-[10px] font-bold uppercase tracking-[0.4em] text-nt-orange shadow-lg shadow-orange-950/20"
+            className="inline-flex items-center gap-3 bg-nt-yellow-light/10 backdrop-blur-xl border border-nt-yellow/20 rounded-full px-4 py-1.5 mb-8 text-[10px] font-bold uppercase tracking-[0.4em] text-nt-yellow shadow-lg shadow-orange-950/20"
           >
             <ShieldAlert className="w-3 h-3" /> O Cenário Atual
           </motion.div>
@@ -88,7 +88,7 @@ export default function ProblemSection() {
               {/* Card Content */}
               <div className="relative p-12 h-full flex flex-col items-start z-10">
                 {/* Icon Container with Glow */}
-                <div className={`w-20 h-20 rounded-[2rem] bg-teal-500/10 flex items-center justify-center mb-10 text-teal-400 group-hover:bg-nt-orange group-hover:text-white transition-all duration-700 shadow-2xl ${p.glow} group-hover:rotate-6 group-hover:scale-110`}>
+                <div className={`w-20 h-20 rounded-[2rem] bg-teal-500/10 flex items-center justify-center mb-10 text-teal-400 group-hover:bg-nt-yellow group-hover:text-white transition-all duration-700 shadow-2xl ${p.glow} group-hover:rotate-6 group-hover:scale-110`}>
                   {p.icon}
                 </div>
                 

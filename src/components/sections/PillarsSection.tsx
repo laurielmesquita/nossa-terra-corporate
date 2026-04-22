@@ -86,7 +86,7 @@ export default function PillarsSection() {
                 "group border-none flex flex-col gap-8 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(15,61,53,0.15)] rounded-[2.5rem] p-10 overflow-hidden relative",
                 p.variant === "dark" ? "bg-primary text-white" : "bg-white shadow-xl shadow-primary/5",
                 p.variant === "accent" ? "border-t-4 border-accent" : "",
-                p.variant === "orange" ? "border-t-4 border-nt-orange" : ""
+                p.variant === "orange" ? "border-t-4 border-nt-yellow" : ""
               )}
             >
               {/* Meta */}

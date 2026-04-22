@@ -64,7 +64,7 @@ export default function ListingPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-60" />
                 
                 {prop.opportunity && (
-                  <Badge className="absolute top-6 right-6 bg-nt-orange text-white px-4 py-1.5 rounded-xl font-bold uppercase text-[9px] tracking-widest leading-none shadow-xl border-none">
+                  <Badge className="absolute top-6 right-6 bg-nt-yellow text-teal-950 px-4 py-1.5 rounded-xl font-bold uppercase text-[9px] tracking-widest leading-none shadow-xl border-none">
                     Oportunidade
                   </Badge>
                 )}

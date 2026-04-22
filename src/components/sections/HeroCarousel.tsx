@@ -22,10 +22,10 @@ export default function HeroCarousel() {
     id: `prop-${prop.id}`,
     content: (
       <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
-        <div className="inline-flex items-center gap-3 bg-nt-orange-light/20 backdrop-blur-xl border border-nt-orange/30 rounded-full px-6 py-2.5 mb-10 text-sm font-bold tracking-wide shadow-2xl text-nt-orange">
+        <div className="inline-flex items-center gap-3 bg-nt-yellow-light/20 backdrop-blur-xl border border-nt-yellow/30 rounded-full px-6 py-2.5 mb-10 text-sm font-bold tracking-wide shadow-2xl text-nt-yellow">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nt-orange opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-nt-orange"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nt-yellow opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-nt-yellow"></span>
           </span>
           {prop.opportunity ? "Oportunidade de Investimento" : "Ativo Disponível"}
         </div>
