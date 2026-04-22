@@ -7,13 +7,14 @@ import { Badge } from "@/components/ui/badge";
 
 interface PropertyHeroProps {
   title: string;
+  tagline?: string;
   location: string;
   type: string;
   videoUrl?: string;
   mainImage: string;
 }
 
-export function PropertyHero({ title, location, type, videoUrl, mainImage }: PropertyHeroProps) {
+export function PropertyHero({ title, tagline, location, type, videoUrl, mainImage }: PropertyHeroProps) {
   return (
     <section className="relative h-[85vh] w-full overflow-hidden bg-teal-darkest">
       {/* Immersive Video/Image Background */}
@@ -73,6 +74,17 @@ export function PropertyHero({ title, location, type, videoUrl, mainImage }: Pro
                 {title.split('—')[0]} <br />
                 <span className="text-teal-accent italic">{title.split('—')[1] || ''}</span>
               </h1>
+              
+              {tagline && (
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 1 }}
+                  className="text-lg md:text-2xl text-white/60 max-w-2xl leading-relaxed font-medium"
+                >
+                  {tagline}
+                </motion.p>
+              )}
 
               <div className="flex items-center gap-6 text-white/80 font-medium">
                 <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl">

@@ -4,13 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { properties } from "@/data/properties";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Pause, Play } from "lucide-react";
 
 const buttonClass = "w-full sm:w-auto bg-teal-600 hover:bg-white hover:text-teal-900 text-white rounded-2xl h-20 px-12 text-xl font-extrabold shadow-2xl shadow-teal-600/40 transition-all duration-700 hover:scale-105 flex items-center justify-center no-underline gap-3";
 const outlineClass = "w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-2xl h-20 px-12 text-xl font-bold backdrop-blur-md transition-all duration-700 hover:scale-105 flex items-center justify-center no-underline";
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const featuredProperty = properties[0];
 
   const slides = [
@@ -32,7 +33,7 @@ export default function HeroCarousel() {
           </h1>
 
           <p className="text-lg md:text-2xl text-white/70 max-w-4xl mx-auto mb-16 leading-relaxed font-medium">
-            {featuredProperty.description} — Localizada em {featuredProperty.location} com {featuredProperty.area}.
+            {featuredProperty.tagline || featuredProperty.description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full max-w-md md:max-w-none">
@@ -109,12 +110,17 @@ export default function HeroCarousel() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 8000);
+    if (isPaused) return;
+    const timer = setInterval(nextSlide, 12000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused, currentSlide]);
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-teal-950">
+    <section 
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-teal-950"
+    >
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -176,6 +182,20 @@ export default function HeroCarousel() {
           className="w-12 h-12 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white hover:text-teal-950 hover:scale-110 active:scale-95 cursor-pointer transition-all duration-300"
         >
           <ChevronRight className="w-6 h-6" />
+        </button>
+
+        <div className="md:h-12 md:w-[1px] bg-white/10 hidden md:block mx-2" />
+
+        <button 
+          onClick={() => setIsPaused(!isPaused)}
+          className={`w-12 h-12 rounded-full border border-white/20 flex items-center justify-center transition-all duration-500 hover:scale-110 ${
+            isPaused 
+              ? "bg-teal-400 border-teal-400 text-teal-950 shadow-lg shadow-teal-400/20" 
+              : "bg-white/5 backdrop-blur-xl text-white hover:bg-white/10"
+          }`}
+          title={isPaused ? "Retomar Reprodução" : "Pausar Carrossel"}
+        >
+          {isPaused ? <Play className="w-5 h-5 fill-current" /> : <Pause className="w-5 h-5 fill-current" />}
         </button>
       </div>
 

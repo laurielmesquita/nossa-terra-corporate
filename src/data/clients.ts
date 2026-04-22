@@ -25,12 +25,12 @@ export const clients: Client[] = [
     shortName: "FLM",
     type: "individual",
     featured: true,
-    contractDate: "2024-04",
+    contractDate: "2026-04",
     testimonial: {
       quote: "A estrutura organizacional e a consultoria documental da Nossa Terra nos deram a segurança necessária para consolidar 5.000 hectares com autonomia total.",
       author: "Proprietário",
       role: "Fazenda Lagoa do Mato - MA",
-      date: "2024-04"
+      date: "2026-04"
     }
   },
   {
@@ -40,12 +40,12 @@ export const clients: Client[] = [
     type: "enterprise",
     logoUrl: "/assets/logos/clients/agro-exemplo.png",
     featured: true,
-    contractDate: "2024-04",
+    contractDate: "2026-04",
     testimonial: {
       quote: "A consultoria técnica e jurídica da Nossa Terra foi fundamental para a expansão de nossas operações no Piauí. Segurança total em cada hectare.",
       author: "Dr. Roberto Silva",
       role: "CEO - Agro Exemplo",
-      date: "2024-04"
+      date: "2026-04"
     }
   }
 ];

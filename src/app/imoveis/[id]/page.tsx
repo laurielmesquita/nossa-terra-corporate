@@ -111,6 +111,7 @@ export default async function PropertyPage({ params }: Props) {
       {/* 1. Immersive Hero */}
       <PropertyHero 
         title={property.title}
+        tagline={property.tagline}
         location={property.location}
         type={property.type}
         videoUrl={property.videoUrl}
