@@ -12,99 +12,100 @@ const outlineClass = "w-full sm:w-auto bg-white/5 hover:bg-white/10 border borde
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const featuredProperty = properties[0];
 
-  const slides = [
-    {
-      id: "property",
-      content: (
-        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
-          <div className="inline-flex items-center gap-3 bg-nt-orange-light/20 backdrop-blur-xl border border-nt-orange/30 rounded-full px-6 py-2.5 mb-10 text-sm font-bold tracking-wide shadow-2xl text-nt-orange">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nt-orange opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-nt-orange"></span>
-            </span>
-            Oportunidade de Investimento
-          </div>
-
-          <h1 className="font-serif font-extrabold text-5xl md:text-7xl lg:text-9xl leading-[1.0] tracking-tight mb-10 max-w-screen-2xl mx-auto drop-shadow-2xl">
-            {featuredProperty.title} <br />
-            <span className="text-teal-400 italic">{featuredProperty.price}</span>
-          </h1>
-
-          <p className="text-lg md:text-2xl text-white/70 max-w-4xl mx-auto mb-16 leading-relaxed font-medium">
-            {featuredProperty.tagline || featuredProperty.description}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full max-w-md md:max-w-none">
-            <Link href={`/imoveis/${featuredProperty.id}`} className={buttonClass}>
-              Ver Detalhes da Fazenda <ArrowRight className="w-6 h-6" />
-            </Link>
-            <a href="https://api.whatsapp.com/send?phone=5586999279390" className={outlineClass}>
-              Falar com Consultor
-            </a>
-          </div>
+  // Generate slides for featured properties
+  const propertySlides = properties.filter(p => p.featured).map((prop) => ({
+    id: `prop-${prop.id}`,
+    content: (
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
+        <div className="inline-flex items-center gap-3 bg-nt-orange-light/20 backdrop-blur-xl border border-nt-orange/30 rounded-full px-6 py-2.5 mb-10 text-sm font-bold tracking-wide shadow-2xl text-nt-orange">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nt-orange opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-nt-orange"></span>
+          </span>
+          {prop.opportunity ? "Oportunidade de Investimento" : "Ativo Disponível"}
         </div>
-      ),
-      bg: featuredProperty.mainImage,
-      video: "https://cdn.coverr.co/videos/coverr-horses-on-a-misty-farm-5500/1080p.mp4"
-    },
-    {
-      id: "brand",
-      content: (
-        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-2.5 mb-10 text-sm font-semibold tracking-wide shadow-2xl">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-400"></span>
-            </span>
-            Norte do Piauí · Sul do Maranhão
-          </div>
 
-          <h1 className="font-serif font-extrabold text-5xl md:text-7xl lg:text-9xl leading-[1.0] tracking-tight mb-10 max-w-screen-2xl mx-auto drop-shadow-2xl">
-            Segurança Jurídica, <br />
-            <span className="text-teal-400 italic">Análise Técnica</span> <br />
-            e Crédito Rural.
-          </h1>
+        <h1 className="font-serif font-extrabold text-5xl md:text-7xl lg:text-9xl leading-[1.0] tracking-tight mb-10 max-w-screen-2xl mx-auto drop-shadow-2xl">
+          {prop.title} <br />
+          <span className="text-teal-400 italic">{prop.price}</span>
+        </h1>
 
-          <p className="text-lg md:text-2xl text-white/70 max-w-4xl mx-auto mb-16 leading-relaxed font-medium">
-            A Nossa Terra não é apenas uma imobiliária rural. É a consultoria
-            estratégica para quem exige absoluta proteção e inteligência no campo.
-          </p>
+        <p className="text-lg md:text-2xl text-white/70 max-w-4xl mx-auto mb-16 leading-relaxed font-medium">
+          {prop.tagline || prop.description.substring(0, 160) + "..."}
+        </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full max-w-md md:max-w-none">
-              <a href="https://api.whatsapp.com/send?phone=5586999279390" className={buttonClass}>
-                Consultoria Grátis
-              </a>
-              <Link href="#imoveis" className={outlineClass}>
-                Ver Catálogo
-              </Link>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full max-w-md md:max-w-none">
+          <Link href={`/imoveis/${prop.id}`} className={buttonClass}>
+            Ver Detalhes da Fazenda <ArrowRight className="w-6 h-6" />
+          </Link>
+          <a href="https://api.whatsapp.com/send?phone=5586999279390" className={outlineClass}>
+            Falar com Consultor
+          </a>
+        </div>
+      </div>
+    ),
+    bg: prop.mainImage,
+    video: prop.videoUrl
+  }));
+
+  const brandSlide = {
+    id: "brand",
+    content: (
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-8 text-center text-white py-32 flex flex-col items-center">
+        <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-2.5 mb-10 text-sm font-semibold tracking-wide shadow-2xl">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-400"></span>
+          </span>
+          Norte do Piauí · Sul do Maranhão
+        </div>
+
+        <h1 className="font-serif font-extrabold text-5xl md:text-7xl lg:text-9xl leading-[1.0] tracking-tight mb-10 max-w-screen-2xl mx-auto drop-shadow-2xl">
+          Segurança Jurídica, <br />
+          <span className="text-teal-400 italic">Análise Técnica</span> <br />
+          e Crédito Rural.
+        </h1>
+
+        <p className="text-lg md:text-2xl text-white/70 max-w-4xl mx-auto mb-16 leading-relaxed font-medium">
+          A Nossa Terra não é apenas uma imobiliária rural. É a consultoria
+          estratégica para quem exige absoluta proteção e inteligência no campo.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full max-w-md md:max-w-none">
+          <a href="https://api.whatsapp.com/send?phone=5586999279390" className={buttonClass}>
+            Consultoria Grátis
+          </a>
+          <Link href="/imoveis" className={outlineClass}>
+            Ver Catálogo
+          </Link>
+        </div>
+
+        {/* Stats Strip */}
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-screen-2xl w-full border-t border-white/10 pt-12">
+          {[
+            { value: "2021", label: "No Mercado" },
+            { value: "100%", label: "Segurança" },
+            { value: "PI/MA", label: "Estados" },
+            { value: "4 em 1", label: "Consultoria" },
+          ].map((stat) => (
+            <div key={stat.label} className="group">
+              <div className="text-4xl md:text-5xl font-serif font-extrabold text-teal-400 mb-2 drop-shadow-sm group-hover:scale-110 transition-all duration-500">
+                {stat.value}
+              </div>
+              <div className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-bold">
+                {stat.label}
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
+    ),
+    bg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80",
+    video: null
+  };
 
-            {/* Stats Strip */}
-            <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-screen-2xl w-full border-t border-white/10 pt-12">
-              {[
-                { value: "2021", label: "No Mercado" },
-                { value: "100%", label: "Segurança" },
-                { value: "PI/MA", label: "Estados" },
-                { value: "4 em 1", label: "Consultoria" },
-              ].map((stat) => (
-                <div key={stat.label} className="group">
-                  <div className="text-4xl md:text-5xl font-serif font-extrabold text-teal-400 mb-2 drop-shadow-sm group-hover:scale-110 transition-all duration-500">
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-bold">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ),
-        bg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=80",
-        video: null
-      }
-  ];
+  const slides = [...propertySlides, brandSlide];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
