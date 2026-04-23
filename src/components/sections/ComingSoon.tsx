@@ -82,9 +82,9 @@ export default function ComingSoon() {
                     <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
                   </span>
                 </div>
-                <div className="flex flex-col items-start leading-none text-left">
-                  <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-1.5">Fale com Especialista</span>
-                  <span className="text-xl md:text-2xl font-black">Consultoria via WhatsApp</span>
+                <div className="flex flex-col items-start leading-tight text-left">
+                  <span className="text-[13px] md:text-base font-bold uppercase tracking-widest opacity-90 mb-0.5">Fale com Especialista</span>
+                  <span className="text-[22px] md:text-3xl font-black tracking-tight">Consultoria via WhatsApp</span>
                 </div>
               </a>
               
