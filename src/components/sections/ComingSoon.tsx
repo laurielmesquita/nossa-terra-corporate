@@ -55,7 +55,7 @@ export default function ComingSoon() {
 
             {/* Headline */}
             <h1 className={`font-serif text-5xl md:text-6xl lg:text-[5rem] font-bold leading-[1.05] mb-8 text-white ${mounted ? "animate-fade-in-up stagger-2" : "opacity-0"}`}>
-              Semeando o futuro do <br className="hidden md:block" /> seu <span className="text-[#8B6F47] italic">patrimônio</span>.
+              Semeando o futuro <br className="hidden md:block" /> do seu <span className="text-[#8B6F47] italic">patrimônio</span>.
             </h1>
 
             {/* Description */}
