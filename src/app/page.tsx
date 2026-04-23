@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ComingSoon from "@/components/sections/ComingSoon";
 
 export const metadata: Metadata = {
-  title: "Nossa Terra Imobiliária — Apresentação Digital",
+  title: "Em Breve | Nossa Terra Imobiliária",
   description:
-    "Desenvolvendo uma nova experiência digital para a Nossa Terra Imobiliária.",
+    "Preparando uma nova experiência para guiar você de forma simples e segura no mercado imobiliário rural e urbano.",
   openGraph: {
-    title: "Nossa Terra — Apresentação Digital",
-    description: "Inovação e segurança no mercado imobiliário rural. Norte do Piauí e Sul do Maranhão.",
+    title: "Em Breve | Nossa Terra Imobiliária",
+    description: "Semeando o futuro do seu patrimônio com inteligência documental e perícia.",
     images: [
       {
         url: "/opengraph-image.png",
