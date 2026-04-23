@@ -66,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={cn("font-sans", geist.variable)}>
-      <body className="antialiased bg-[#0F3D35]">
+      <body className="antialiased">
         <main>{children}</main>
         <Analytics />
         <SpeedInsights />
