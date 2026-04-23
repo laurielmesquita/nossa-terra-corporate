@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -68,10 +66,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={cn("font-sans", geist.variable)}>
-      <body className="antialiased">
-        <Navbar />
+      <body className="antialiased bg-[#0F3D35]">
         <main>{children}</main>
-        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

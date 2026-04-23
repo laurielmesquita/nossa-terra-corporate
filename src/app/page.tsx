@@ -1,21 +1,13 @@
 import type { Metadata } from "next";
-import HeroCarousel from "@/components/sections/HeroCarousel";
-import ProofStrip from "@/components/sections/ProofStrip";
-import ProblemSection from "@/components/sections/ProblemSection";
-import PillarsSection from "@/components/sections/PillarsSection";
-import AudienceSection from "@/components/sections/AudienceSection";
-import AlineTeaser from "@/components/sections/AlineTeaser";
-import FeaturedCatalog from "@/components/sections/FeaturedCatalog";
-import NewsletterSection from "@/components/sections/NewsletterSection";
-import FinalCTA from "@/components/sections/FinalCTA";
+import ComingSoon from "@/components/sections/ComingSoon";
 
 export const metadata: Metadata = {
-  title: "Nossa Terra Imobiliária — Consultoria Completa em Imóveis Rurais",
+  title: "Nossa Terra Imobiliária — Apresentação Digital",
   description:
-    "Segurança jurídica especializada, análise técnica de solo e crédito rural. A consultoria completa para quem quer investir no campo com inteligência. Norte do PI e Sul do MA.",
+    "Desenvolvendo uma nova experiência digital para a Nossa Terra Imobiliária.",
   openGraph: {
-    title: "Nossa Terra — Inteligência Documental e Consultoria Rural",
-    description: "Segurança jurídica e técnica para seu investimento no campo.",
+    title: "Nossa Terra — Apresentação Digital",
+    description: "Inovação e segurança no mercado imobiliário rural. Norte do Piauí e Sul do Maranhão.",
     images: [
       {
         url: "/opengraph-image.png",
@@ -32,17 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return (
-    <>
-      <HeroCarousel />
-      <ProofStrip />
-      <PillarsSection />
-      <ProblemSection />
-      <AlineTeaser />
-      <AudienceSection />
-      <NewsletterSection />
-      <FeaturedCatalog />
-      <FinalCTA />
-    </>
-  );
+  return <ComingSoon />;
 }
