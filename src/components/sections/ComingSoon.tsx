@@ -73,7 +73,7 @@ export default function ComingSoon() {
             <div className={`mt-14 flex flex-col sm:flex-row gap-6 items-center ${mounted ? "animate-fade-in-up stagger-4" : "opacity-0"}`}>
               <a 
                 href="https://api.whatsapp.com/send?phone=5586995903007&text=Olá!%20Gostaria+de%20saber+mais%20sobre%20a%20Nossa%20Terra." 
-                className="flex items-center justify-center gap-4 bg-[#17A98B] hover:bg-teal-500 text-white px-8 py-5 md:px-10 md:py-6 rounded-full shadow-2xl shadow-[#17A98B]/40 no-underline group transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto"
+                className="flex items-center justify-center gap-6 md:gap-8 bg-[#17A98B] hover:bg-teal-500 text-white px-8 py-5 md:px-10 md:py-6 rounded-full shadow-2xl shadow-[#17A98B]/40 no-underline group transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto"
               >
                 <div className="relative mt-1">
                   <Phone className="w-12 h-12 md:w-[56px] md:h-[56px] fill-white" />
