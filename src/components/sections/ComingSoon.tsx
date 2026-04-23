@@ -61,7 +61,7 @@ export default function ComingSoon() {
             {/* Description */}
             <div className={`space-y-6 text-lg md:text-xl text-[#E8F5F3]/80 leading-relaxed max-w-3xl font-light ${mounted ? "animate-fade-in-up stagger-3" : "opacity-0"}`}>
               <p>
-                Com muito esmero, estamos construindo uma experiência projetada para ajudar você de forma simples e segura nas decisões do <strong>mercado imobiliário rural e urbano</strong>.
+                Estamos construindo uma experiência projetada para ajudar você de forma simples e segura nas decisões do <strong>mercado imobiliário rural e urbano</strong>.
               </p>
               <p>
                 Um modelo que une inteligência documental, perícia judicial e uma curadoria impecável de ativos. Em breve, algo extraordinário será entregue ao público.
