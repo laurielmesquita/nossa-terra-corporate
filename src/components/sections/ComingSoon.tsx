@@ -72,13 +72,17 @@ export default function ComingSoon() {
             <div className={`mt-14 flex flex-col sm:flex-row gap-6 items-center ${mounted ? "animate-fade-in-up stagger-4" : "opacity-0"}`}>
               <a 
                 href="https://api.whatsapp.com/send?phone=5586995903007&text=Olá!%20Gostaria+de%20saber+mais%20sobre%20a%20Nossa%20Terra." 
-                className="group relative px-10 py-5 bg-[#17A98B] text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(23,169,139,0.4)] w-full sm:w-auto text-center"
+                className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#17A98B] text-white rounded-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(23,169,139,0.4)] w-full sm:w-auto inline-flex items-center justify-center gap-4 md:gap-5"
               >
-                <span className="relative z-10 flex items-center justify-center gap-3 text-lg">
-                  Fale com um Especialista
-                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <span className="relative z-10 flex items-center justify-center">
+                  <svg className="w-10 h-10 md:w-11 md:h-11" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.98 16.52c-2.43 2.44-3.13 6.07-1.8 9.29 2.5 6.03 7.85 11.38 13.88 13.88 3.22 1.33 6.85.63 9.29-1.8l3.18-3.18c1.37-1.37 1.42-3.57.11-5.01l-2.6-2.86c-1.2-1.32-3.16-1.53-4.63-.5l-1.92 1.34c-1.26.88-2.92.74-4.01-.35l-4.14-4.14c-1.09-1.09-1.23-2.75-.35-4.01l1.34-1.92c1.03-1.47.82-3.43-.5-4.63l-2.86-2.6c-1.44-1.31-3.64-1.26-5.01.11l-3.18 3.18Z" fill="currentColor"/>
+                    <circle cx="34" cy="14" r="6" fill="currentColor"/>
                   </svg>
+                </span>
+                <span className="relative z-10 flex flex-col items-start text-left">
+                  <span className="text-[11px] md:text-xs font-bold tracking-[0.15em] text-white/80 uppercase mb-0.5">Fale com Especialista</span>
+                  <span className="text-xl md:text-[1.4rem] font-bold leading-none tracking-tight">Consultoria via WhatsApp</span>
                 </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               </a>
