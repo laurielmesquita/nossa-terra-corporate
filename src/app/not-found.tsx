@@ -19,19 +19,19 @@ export default function NotFound() {
         <div className="relative mb-8">
           <style dangerouslySetInnerHTML={{__html: `
             @keyframes wind-flow-1 {
-              0%, 10% { stroke-dashoffset: 100; }
+              0%, 10% { stroke-dashoffset: -100; }
               35%, 65% { stroke-dashoffset: 0; }
-              85%, 100% { stroke-dashoffset: -100; }
+              85%, 100% { stroke-dashoffset: 100; }
             }
             @keyframes wind-flow-2 {
-              0%, 5% { stroke-dashoffset: 100; }
+              0%, 5% { stroke-dashoffset: -100; }
               30%, 75% { stroke-dashoffset: 0; }
-              95%, 100% { stroke-dashoffset: -100; }
+              95%, 100% { stroke-dashoffset: 100; }
             }
             @keyframes wind-flow-3 {
-              0%, 15% { stroke-dashoffset: 100; }
+              0%, 15% { stroke-dashoffset: -100; }
               45%, 60% { stroke-dashoffset: 0; }
-              80%, 100% { stroke-dashoffset: -100; }
+              80%, 100% { stroke-dashoffset: 100; }
             }
             .wind-path-1 { stroke-dasharray: 100 100; animation: wind-flow-1 4s ease-in-out infinite; }
             .wind-path-2 { stroke-dasharray: 100 100; animation: wind-flow-2 4s ease-in-out infinite; }
