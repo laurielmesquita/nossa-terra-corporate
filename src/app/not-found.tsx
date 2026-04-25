@@ -18,17 +18,21 @@ export default function NotFound() {
         {/* Animated Icon */}
         <div className="relative mb-8">
           <style dangerouslySetInnerHTML={{__html: `
-            @keyframes wind-drift {
-              0%, 100% { transform: translateX(-15px) translateY(5px) rotate(-10deg); }
-              50% { transform: translateX(15px) translateY(-5px) rotate(10deg); }
+            @keyframes wind-flow {
+              0% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+              50% { stroke-dasharray: 50 50; stroke-dashoffset: 0; }
+              100% { stroke-dasharray: 50 50; stroke-dashoffset: -50; }
             }
+            .wind-path-1 { animation: wind-flow 2s ease-in-out infinite; }
+            .wind-path-2 { animation: wind-flow 2.5s ease-in-out infinite 0.4s; }
+            .wind-path-3 { animation: wind-flow 2.2s ease-in-out infinite 0.8s; }
           `}} />
           <div className="absolute inset-0 bg-[#8B6F47]/20 rounded-full blur-xl animate-pulse" style={{ animationDuration: '4s' }} />
-          <Wind 
-            className="relative w-28 h-28 text-[#8B6F47] drop-shadow-2xl" 
-            style={{ animation: 'wind-drift 5s ease-in-out infinite' }} 
-            strokeWidth={1} 
-          />
+          <svg className="relative w-28 h-28 text-[#8B6F47] drop-shadow-2xl overflow-visible" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" className="wind-path-1" />
+            <path d="M9.6 4.6A2 2 0 1 1 11 8H2" className="wind-path-2" />
+            <path d="M12.6 19.4A2 2 0 1 0 14 16H2" className="wind-path-3" />
+          </svg>
         </div>
 
         {/* 404 Badge */}
