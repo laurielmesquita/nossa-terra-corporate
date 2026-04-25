@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "/", label: "Início" },
-  { href: "/sobre", label: "Sobre" },
-  { href: "/imoveis", label: "Imóveis" },
-  { href: "/contato", label: "Contato" },
+  { href: "/preview", label: "Início" },
+  { href: "/preview/sobre", label: "Sobre" },
+  { href: "/preview/imoveis", label: "Imóveis" },
+  { href: "/preview/contato", label: "Contato" },
 ];
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
       >
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-[72px]">
-          <Link href="/" className="flex items-center no-underline group outline-none">
+          <Link href="/preview" className="flex items-center no-underline group outline-none">
             <div className="relative h-10 w-48">
               <Image 
                 src={isOpaque ? "/assets/logos/nossaterra-logo-horizontal-color.png" : "/assets/logos/nossaterra-logo-horizontal-white.png"} 

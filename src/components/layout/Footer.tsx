@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-5 space-y-10">
-            <Link href="/" className="flex items-center no-underline group outline-none">
+            <Link href="/preview" className="flex items-center no-underline group outline-none">
               <Image 
                 src="/assets/logos/nossaterra-logo-vertical-white.png" 
                 alt="Nossa Terra Imobiliária" 
@@ -35,10 +35,10 @@ export default function Footer() {
             <h4 className="text-teal-400 font-bold uppercase tracking-[0.3em] text-[10px]">Links Rápidos</h4>
             <nav className="flex flex-col gap-3">
               {[
-                { label: "Início", href: "/" },
-                { label: "Sobre", href: "/sobre" },
-                { label: "Imóveis", href: "/imoveis" },
-                { label: "Contato", href: "/contato" },
+                { label: "Início", href: "/preview" },
+                { label: "Sobre", href: "/preview/sobre" },
+                { label: "Imóveis", href: "/preview/imoveis" },
+                { label: "Contato", href: "/preview/contato" },
               ].map((link) => (
                 <Link key={link.label} href={link.href} className="text-white/70 hover:text-white transition-colors text-lg font-medium no-underline">
                   {link.label}
