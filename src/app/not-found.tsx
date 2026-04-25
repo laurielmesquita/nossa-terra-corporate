@@ -18,14 +18,24 @@ export default function NotFound() {
         {/* Animated Icon */}
         <div className="relative mb-8">
           <style dangerouslySetInnerHTML={{__html: `
-            @keyframes wind-flow {
-              0% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
-              50% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
-              100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+            @keyframes wind-flow-1 {
+              0%, 10% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
+              35%, 65% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
+              85%, 100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
             }
-            .wind-path-1 { animation: wind-flow 2s ease-in-out infinite; }
-            .wind-path-2 { animation: wind-flow 2.5s ease-in-out infinite 0.4s; }
-            .wind-path-3 { animation: wind-flow 2.2s ease-in-out infinite 0.8s; }
+            @keyframes wind-flow-2 {
+              0%, 5% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
+              30%, 75% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
+              95%, 100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+            }
+            @keyframes wind-flow-3 {
+              0%, 15% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
+              45%, 60% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
+              80%, 100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+            }
+            .wind-path-1 { animation: wind-flow-1 4s ease-in-out infinite; }
+            .wind-path-2 { animation: wind-flow-2 4s ease-in-out infinite; }
+            .wind-path-3 { animation: wind-flow-3 4s ease-in-out infinite; }
           `}} />
           <div className="absolute inset-0 bg-[#8B6F47]/20 rounded-full blur-xl animate-pulse" style={{ animationDuration: '4s' }} />
           <svg className="relative w-28 h-28 text-[#8B6F47] drop-shadow-2xl overflow-visible" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
