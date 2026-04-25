@@ -19,29 +19,29 @@ export default function NotFound() {
         <div className="relative mb-8">
           <style dangerouslySetInnerHTML={{__html: `
             @keyframes wind-flow-1 {
-              0%, 10% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
-              35%, 65% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
-              85%, 100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+              0%, 10% { stroke-dashoffset: 100; }
+              35%, 65% { stroke-dashoffset: 0; }
+              85%, 100% { stroke-dashoffset: -100; }
             }
             @keyframes wind-flow-2 {
-              0%, 5% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
-              30%, 75% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
-              95%, 100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+              0%, 5% { stroke-dashoffset: 100; }
+              30%, 75% { stroke-dashoffset: 0; }
+              95%, 100% { stroke-dashoffset: -100; }
             }
             @keyframes wind-flow-3 {
-              0%, 15% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
-              45%, 60% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
-              80%, 100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
+              0%, 15% { stroke-dashoffset: 100; }
+              45%, 60% { stroke-dashoffset: 0; }
+              80%, 100% { stroke-dashoffset: -100; }
             }
-            .wind-path-1 { animation: wind-flow-1 4s ease-in-out infinite; }
-            .wind-path-2 { animation: wind-flow-2 4s ease-in-out infinite; }
-            .wind-path-3 { animation: wind-flow-3 4s ease-in-out infinite; }
+            .wind-path-1 { stroke-dasharray: 100 100; animation: wind-flow-1 4s ease-in-out infinite; }
+            .wind-path-2 { stroke-dasharray: 100 100; animation: wind-flow-2 4s ease-in-out infinite; }
+            .wind-path-3 { stroke-dasharray: 100 100; animation: wind-flow-3 4s ease-in-out infinite; }
           `}} />
           <div className="absolute inset-0 bg-[#8B6F47]/20 rounded-full blur-xl animate-pulse" style={{ animationDuration: '4s' }} />
           <svg className="relative w-28 h-28 text-[#8B6F47] drop-shadow-2xl overflow-visible" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" className="wind-path-1" />
-            <path d="M9.6 4.6A2 2 0 1 1 11 8H2" className="wind-path-2" />
-            <path d="M12.6 19.4A2 2 0 1 0 14 16H2" className="wind-path-3" />
+            <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" className="wind-path-1" pathLength="100" />
+            <path d="M9.6 4.6A2 2 0 1 1 11 8H2" className="wind-path-2" pathLength="100" />
+            <path d="M12.6 19.4A2 2 0 1 0 14 16H2" className="wind-path-3" pathLength="100" />
           </svg>
         </div>
 
