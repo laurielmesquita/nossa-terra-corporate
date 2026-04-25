@@ -19,9 +19,9 @@ export default function NotFound() {
         <div className="relative mb-8">
           <style dangerouslySetInnerHTML={{__html: `
             @keyframes wind-flow {
-              0% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
-              50% { stroke-dasharray: 50 50; stroke-dashoffset: 0; }
-              100% { stroke-dasharray: 50 50; stroke-dashoffset: -50; }
+              0% { stroke-dasharray: 0 50; stroke-dashoffset: -50; }
+              50% { stroke-dasharray: 50 50; stroke-dashoffset: -25; }
+              100% { stroke-dasharray: 0 50; stroke-dashoffset: 0; }
             }
             .wind-path-1 { animation: wind-flow 2s ease-in-out infinite; }
             .wind-path-2 { animation: wind-flow 2.5s ease-in-out infinite 0.4s; }
