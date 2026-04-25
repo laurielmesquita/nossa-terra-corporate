@@ -17,10 +17,16 @@ export default function NotFound() {
       <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto mt-[-5vh]">
         {/* Animated Icon */}
         <div className="relative mb-8">
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes wind-drift {
+              0%, 100% { transform: translateX(-15px) translateY(5px) rotate(-10deg); }
+              50% { transform: translateX(15px) translateY(-5px) rotate(10deg); }
+            }
+          `}} />
           <div className="absolute inset-0 bg-[#8B6F47]/20 rounded-full blur-xl animate-pulse" style={{ animationDuration: '4s' }} />
           <Wind 
-            className="relative w-28 h-28 text-[#8B6F47] animate-pulse drop-shadow-2xl" 
-            style={{ animationDuration: '3s' }} 
+            className="relative w-28 h-28 text-[#8B6F47] drop-shadow-2xl" 
+            style={{ animation: 'wind-drift 5s ease-in-out infinite' }} 
             strokeWidth={1} 
           />
         </div>
