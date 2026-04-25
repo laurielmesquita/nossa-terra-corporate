@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Compass } from "lucide-react";
+import { Wind } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -15,12 +15,12 @@ export default function NotFound() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto mt-[-5vh]">
-        {/* Animated Compass Icon */}
+        {/* Animated Icon */}
         <div className="relative mb-8">
           <div className="absolute inset-0 bg-[#8B6F47]/20 rounded-full blur-xl animate-pulse" style={{ animationDuration: '4s' }} />
-          <Compass 
-            className="relative w-28 h-28 text-[#8B6F47] animate-spin drop-shadow-2xl" 
-            style={{ animationDuration: '8s' }} 
+          <Wind 
+            className="relative w-28 h-28 text-[#8B6F47] animate-pulse drop-shadow-2xl" 
+            style={{ animationDuration: '3s' }} 
             strokeWidth={1} 
           />
         </div>
@@ -31,11 +31,11 @@ export default function NotFound() {
         </div>
 
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-md">
-          Erro de <span className="italic text-[#17A98B]">Georreferenciamento</span>
+          Chegamos no <span className="italic text-[#17A98B]">fim da cerca!</span>
         </h1>
         
         <p className="text-lg md:text-xl text-[#E8F5F3]/70 font-light leading-relaxed mb-10 max-w-lg">
-          As coordenadas que você digitou apontaram para um lote vazio no meio do nada. Essa página não consta em nossos registros cartoriais (ou já foi arrematada).
+          Pasto vazio por aqui! Você encontrou uma área sem sede, sem cerca e sem conteúdo. Não se preocupe, não há grileiros, apenas uma página que não existe.
         </p>
 
         <Link 
