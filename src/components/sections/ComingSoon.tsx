@@ -70,26 +70,26 @@ export default function ComingSoon() {
             </div>
 
             {/* CTAs */}
-            <div className={`mt-14 flex flex-col sm:flex-row gap-6 items-center ${mounted ? "animate-fade-in-up stagger-4" : "opacity-0"}`}>
+            <div className={`mt-10 md:mt-14 flex flex-col sm:flex-row flex-wrap gap-6 md:gap-8 items-start sm:items-center ${mounted ? "animate-fade-in-up stagger-4" : "opacity-0"}`}>
               <a 
                 href="https://api.whatsapp.com/send?phone=5586995903007&text=Olá!%20Gostaria+de%20saber+mais%20sobre%20a%20Nossa%20Terra." 
-                className="flex items-center justify-center gap-6 md:gap-8 bg-[#17A98B] hover:bg-teal-500 text-white px-8 py-5 md:px-10 md:py-6 rounded-full shadow-2xl shadow-[#17A98B]/40 no-underline group transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto"
+                className="flex items-center justify-center gap-4 md:gap-8 bg-[#17A98B] hover:bg-teal-500 text-white px-7 py-4 md:px-10 md:py-6 rounded-full shadow-2xl shadow-[#17A98B]/40 no-underline group transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto shrink-0"
               >
-                <div className="relative mt-1">
-                  <Phone className="w-12 h-12 md:w-[56px] md:h-[56px] fill-white" />
-                  <span className="absolute -top-0.5 -right-1 md:top-0 md:-right-1.5 flex h-4 w-4 md:h-5 md:w-5">
+                <div className="relative shrink-0 mt-0 md:mt-1">
+                  <Phone className="w-8 h-8 md:w-[56px] md:h-[56px] fill-white" />
+                  <span className="absolute -top-0.5 -right-1 md:top-0 md:-right-1.5 flex h-3 w-3 md:h-5 md:w-5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-4 w-4 md:h-5 md:w-5 bg-white"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 md:h-5 md:w-5 bg-white"></span>
                   </span>
                 </div>
-                <div className="flex flex-col items-start leading-tight text-left">
-                  <span className="text-[13px] md:text-base font-bold uppercase tracking-widest opacity-90 mb-0.5">Fale com Especialista</span>
-                  <span className="text-[22px] md:text-3xl font-black tracking-tight">Consultoria via WhatsApp</span>
+                <div className="flex flex-col items-start leading-tight text-left whitespace-nowrap">
+                  <span className="text-[11px] md:text-base font-bold uppercase tracking-widest opacity-90 mb-0.5">Fale com Especialista</span>
+                  <span className="text-[18px] md:text-3xl font-black tracking-tight">Consultoria via WhatsApp</span>
                 </div>
               </a>
               
-              <div className="flex flex-col items-center sm:items-start text-sm text-[#E8F5F3]/50 mt-4 sm:mt-0">
-                <span className="font-semibold text-[#E8F5F3]/70 uppercase tracking-widest text-xs mb-1">Dúvidas?</span>
+              <div className="flex flex-col items-start text-sm text-[#E8F5F3]/50 mt-2 sm:mt-0">
+                <span className="font-semibold text-[#E8F5F3]/70 uppercase tracking-widest text-[10px] md:text-xs mb-1">Dúvidas?</span>
                 <a href="mailto:contato@nossaterra.imb.br" className="hover:text-[#17A98B] transition-colors border-b border-transparent hover:border-[#17A98B]">
                   contato@nossaterra.imb.br
                 </a>
